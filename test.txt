@@ -1,0 +1,7 @@
+main (){
+	int a,b;
+	int v,w;
+
+	a = b + 8;
+
+}
