@@ -14,20 +14,31 @@ main {return tMAIN;}
 "}" {return tAF;}
 const {return tCONST;}
 int {return tINT;}
+"if" {return tIF;}
+"else" {return tELSE;}
 "printf" { return tPRINT; }
 [a-zA-Z][a-zA-Z0-9_]* {
         // TODO: limite 16
-        strcpy(yylval.var, yytext);
+        yylval.var = strdup(yytext);
         return tVARNAME;}
 "="	{ return tEGAL; }
 "-"	{ return tSOU; }
 "+"	{ return tADD; }
 "*"	{ return tMUL; }
 "/"	{ return tDIV; }
+"!"     { return tNOT; }
+">"     { return tSUP; }
+"<"     { return tINF; }
+"=="    { return tEQUAL; }
+"/="    { return tDIFF; }
+"<="    { return tSUPEQ; }
+">="    { return tINFEQ; }
+"||"    { return tOR; }
+"&&"    { return tAND; }
 " " {}
 "\t" {}
 "," { return tCOMA; }
-"\n" { return tEL; }
+"\n" {}
 ";" { return tSC; }
 [0-9]+(e[0-9]*)? { 
         yylval.nb = atoi(yytext);

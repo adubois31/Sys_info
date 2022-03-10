@@ -61,14 +61,24 @@ extern int yydebug;
     tADD = 267,
     tMUL = 268,
     tDIV = 269,
-    tCOMA = 270,
-    tEL = 271,
-    tSC = 272,
-    tPRINT = 273,
-    tBLANK = 274,
-    tERROR = 275,
-    tVARNAME = 276,
-    tNB = 277
+    tNOT = 270,
+    tSUP = 271,
+    tINF = 272,
+    tEQUAL = 273,
+    tDIFF = 274,
+    tSUPEQ = 275,
+    tINFEQ = 276,
+    tOR = 277,
+    tAND = 278,
+    tCOMA = 279,
+    tSC = 280,
+    tPRINT = 281,
+    tBLANK = 282,
+    tERROR = 283,
+    tIF = 284,
+    tELSE = 285,
+    tVARNAME = 286,
+    tNB = 287
   };
 #endif
 /* Tokens.  */
@@ -84,14 +94,24 @@ extern int yydebug;
 #define tADD 267
 #define tMUL 268
 #define tDIV 269
-#define tCOMA 270
-#define tEL 271
-#define tSC 272
-#define tPRINT 273
-#define tBLANK 274
-#define tERROR 275
-#define tVARNAME 276
-#define tNB 277
+#define tNOT 270
+#define tSUP 271
+#define tINF 272
+#define tEQUAL 273
+#define tDIFF 274
+#define tSUPEQ 275
+#define tINFEQ 276
+#define tOR 277
+#define tAND 278
+#define tCOMA 279
+#define tSC 280
+#define tPRINT 281
+#define tBLANK 282
+#define tERROR 283
+#define tIF 284
+#define tELSE 285
+#define tVARNAME 286
+#define tNB 287
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -100,7 +120,7 @@ union YYSTYPE
 #line 6 "comp.y"
  int nb; char var[16]; 
 
-#line 104 "y.tab.h"
+#line 124 "y.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

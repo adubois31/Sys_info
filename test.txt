@@ -1,7 +1,10 @@
 main (){
-	int a,b;
-	int v,w;
-
-	a = b + 8;
-
+	if (a<b){
+		a=b-a;
+		if(1){
+		}
+	}
+	else {
+		b=b+1;
+	}
 }

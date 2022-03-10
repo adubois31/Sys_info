@@ -1,42 +1,49 @@
 %{
 #include <stdlib.h>
 #include <stdio.h>
+#include "ts.h"
 void yyerror(char *s);
+extern
 %}
 %union { int nb; char var[16]; }
-%token tMAIN tPO tPF tAO tAF tCONST tINT tEGAL tSOU tADD tMUL tDIV tCOMA tEL tSC tPRINT tBLANK tERROR
+%token tMAIN tPO tPF tAO tAF tCONST tINT tEGAL tSOU tADD tMUL tDIV tNOT tSUP tINF tEQUAL tDIFF tSUPEQ tINFEQ tOR tAND tCOMA tSC tPRINT tBLANK tERROR tIF tELSE
 %token <var> tVARNAME 
 %token <nb> tNB
-%type  Body VarInt Var Const Declaration Terme Operation NewLine
+%type  Body VarInt Var Const Declaration Terme Operation  If Condition
 %start Programme
 %%
-Programme :	  tMAIN  tPO  tPF  tAO NewLine Body tAF NewLine
-      |tMAIN  tPO  tPF  tAO Body  tAF NewLine 
-      |tMAIN  tPO  VarInt  tPF  tAO NewLine Body tAF NewLine
-      |tMAIN  tPO  VarInt  tPF  tAO Body tAF NewLine;
+Programme :	  tMAIN  tPO  tPF  tAO  Body tAF 
+      |tMAIN  tPO  tPF  tAO Body  tAF  
+      |tMAIN  tPO  VarInt  tPF  tAO  Body tAF 
+      |tMAIN  tPO  VarInt  tPF  tAO Body tAF ;
 
 Var :     tVARNAME | tVARNAME tCOMA  Var; 
-VarInt :    tINT tVARNAME| tINT tVARNAME tCOMA  Var;
+VarInt :    tINT tVARNAME
+            |tINT tVARNAME tCOMA  Var;
 Const :   tCONST  VarInt;
 Body :  Declaration Body
       | Operation Body
       | Print Body;
+      |If Body;
       |;
-Declaration :  Const  tSC NewLine
-      |VarInt  tSC NewLine
-      |Const tEGAL tNB tSC NewLine
-      |VarInt tEGAL tNB tSC NewLine;
+Declaration :  Const  tSC 
+      |VarInt  tSC 
+      |Const tEGAL tNB tSC 
+      |VarInt tEGAL tNB tSC ;
 
-Terme :   tNB 
+Terme :   tNB {}
       | tVARNAME ;
-Operation :  tVARNAME  tEGAL  Terme   tADD  Terme  tSC  NewLine
-      | tVARNAME  tEGAL  Terme   tSOU  Terme  tSC  NewLine
-      |tVARNAME  tEGAL  Terme   tMUL  Terme  tSC  NewLine
-      |tVARNAME  tEGAL  Terme   tDIV  Terme  tSC  NewLine;
-Print : tPRINT  tPO  tVARNAME  tPF  tSC  NewLine      
-NewLine : tEL NewLine
-      |tEL
-      |;
+Operation :  tVARNAME  tEGAL  Terme   tADD  Terme tSC  
+      | tVARNAME  tEGAL  Terme   tSOU  Terme  tSC  
+      |tVARNAME  tEGAL  Terme   tMUL  Terme  tSC  
+      |tVARNAME  tEGAL  Terme   tDIV  Terme  tSC ;
+Print : tPRINT  tPO  tVARNAME  tPF  tSC        
+If :        tIF tPO Condition tPF  tAO  Body tAF
+            |tIF tPO Condition tPF  tAO  Body tAF  tELSE  tAO  Body tAF;
+Condition :       Terme;
+            |Terme BoolOp Condition
+            |tNOT tPO Condition tPF;
+BoolOp : tSUP |tINF |tEQUAL |tDIFF |tSUPEQ |tINFEQ |tOR |tAND;
 
 
 
