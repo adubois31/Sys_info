@@ -1,8 +1,10 @@
 main (){
+	int a;
+	int b;
 	if (a<b){
-		a=b-a;
-		if(1){
-		}
+		int p1;
+		p1=b-a;
+
 	}
 	else {
 		b=b+1;

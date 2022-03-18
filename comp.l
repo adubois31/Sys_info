@@ -19,7 +19,7 @@ int {return tINT;}
 "printf" { return tPRINT; }
 [a-zA-Z][a-zA-Z0-9_]* {
         // TODO: limite 16
-        yylval.var = strdup(yytext);
+        strcpy(yylval.var,yytext);
         return tVARNAME;}
 "="	{ return tEGAL; }
 "-"	{ return tSOU; }

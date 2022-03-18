@@ -1,41 +1,59 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void init (){
-    TableSymb.pile = null;
-    TableSymb.finPile = null;
+
+
+
+typedef struct{
+    char name [16];
+    char type [8];
+    int profondeur;
+} Symbole;
+
+typedef struct{
+    Symbole table [1000] ;
+    int sommetPile;
+} TS;
+
+TS TabSymb;
+int profondeur;
+
+void ts_inc_depth(){
+    profondeur++;
 }
 
-void pushTS(char * nom, int index, char * type, int profondeur){
-    Symbole newS;
-    strncpy(newS.name, nom,sizeof(nom));
-    newS.indexTS = index;
-    strncpy(newS.type, type,sizeof(type));
-    newS.profondeur=profondeur;
-    Cellule newCell=(Cellule){newS,null};
-    if (TableSymb.pile==null){
-        TableSymb.pile=&newCell;
-        TableSymb.finPile=&newCell;
-    }
-    else{
-        (TableSymb.finPile)->next=&newCell;
-        TableSymb.finPile=&newCell;
-    }
-    
+void init(){
+    TabSymb.sommetPile=-1;
+    profondeur=-1;
 }
 
-Symbole popTS(){
-    Symbole returnedS;
-    Cellule * currentCell = TableSymb.pile;
-    if (currentCell==null)
-        return null;
+void pushTS(char name [16],int isConst){
+    Symbole newElem;
+    if (isConst){
+        newElem = (Symbole){name,"cint",profondeur};;
+        printf("PROFONDEUR : %d \n", profondeur);
+    }
     else{
-        while(currentCell->next/=TableSymb.finPile){
-            currentCell=currentCell->next;
-        }
-        returnedS=(currentCell->next)->S
-        currentCell->next=null;
-        TableSymb.finPile = currentCell;
-        return returnedS;
+        newElem = (Symbole){name,"int",profondeur};
+        printf("PROFONDEUR : %d\n", profondeur);
+    }
+    TabSymb.sommetPile++;
+    TabSymb.table[TabSymb.sommetPile]=newElem;
+    printTS();
+}
+
+void printTS(){
+    printf("-----------Ecriture de la Table des symboles -----------\n");
+    for (int i =0;i<=TabSymb.sommetPile;i++){
+        Symbole S = TabSymb.table[i];
+        printf("name : %s , type : %s , profondeur : %d \n",S.name,S.type,S.profondeur);
+    }
+     printf("-----------Fin print de la Table des symboles -----------\n");
+}
+
+void ts_dec_depth(){
+    while (TabSymb.sommetPile>=0 && (TabSymb.sommetPile)==(TabSymb.table[TabSymb.sommetPile]).profondeur){
+        TabSymb.sommetPile--;
     }
 }
+

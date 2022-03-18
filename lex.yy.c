@@ -814,7 +814,7 @@ YY_RULE_SETUP
 #line 20 "comp.l"
 {
         // TODO: limite 16
-        strcpy(yylval.var, yytext);
+        strcpy(yylval.var,yytext);
         return tVARNAME;}
 	YY_BREAK
 case 12:
@@ -906,7 +906,7 @@ case 29:
 /* rule 29 can match eol */
 YY_RULE_SETUP
 #line 41 "comp.l"
-{ }
+{}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP

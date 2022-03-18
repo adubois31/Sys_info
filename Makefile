@@ -5,7 +5,7 @@ BIN=comp
 CC=gcc
 CFLAGS=-Wall -g
 
-OBJ=y.tab.o lex.yy.o main.o
+OBJ=y.tab.o lex.yy.o main.o ts.o
 
 all: $(BIN)
 
@@ -25,5 +25,5 @@ clean:
 	rm $(OBJ) y.tab.c y.tab.h lex.yy.c y.output
 
 test: all
-	echo "main(){int a,b,c=8;}" | ./$(BIN)
+	echo "main(){int a;}" | ./$(BIN)
 
