@@ -17,6 +17,7 @@ int {return tINT;}
 "if" {return tIF;}
 "else" {return tELSE;}
 "printf" { return tPRINT; }
+"while" {return tWHILE;}
 [a-zA-Z][a-zA-Z0-9_]* {
         // TODO: limite 16
         strcpy(yylval.var,yytext);

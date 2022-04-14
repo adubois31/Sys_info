@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+#include <string.h>
 
 
 
@@ -22,25 +22,11 @@ void ts_inc_depth(){
     profondeur++;
 }
 
-void init(){
+void TSinit(){
     TabSymb.sommetPile=-1;
     profondeur=-1;
 }
 
-void pushTS(char name [16],int isConst){
-    Symbole newElem;
-    if (isConst){
-        newElem = (Symbole){name,"cint",profondeur};;
-        printf("PROFONDEUR : %d \n", profondeur);
-    }
-    else{
-        newElem = (Symbole){name,"int",profondeur};
-        printf("PROFONDEUR : %d\n", profondeur);
-    }
-    TabSymb.sommetPile++;
-    TabSymb.table[TabSymb.sommetPile]=newElem;
-    printTS();
-}
 
 void printTS(){
     printf("-----------Ecriture de la Table des symboles -----------\n");
@@ -51,9 +37,44 @@ void printTS(){
      printf("-----------Fin print de la Table des symboles -----------\n");
 }
 
+void pushTS(char name [16],int isConst){
+    Symbole newElem;
+    if (isConst){
+        memcpy(&newElem.name, name,16);
+        memcpy(&newElem.type, "cint",8);
+        newElem.profondeur=profondeur;
+    }
+    else{
+        memcpy(&newElem.name, name,16);
+        memcpy(&newElem.type, "int",8);
+        newElem.profondeur=profondeur;}
+    TabSymb.sommetPile++;
+    TabSymb.table[TabSymb.sommetPile]=newElem;
+    printTS();
+}
+
+int findAddr(char name[16]){
+    int found=0;
+    int index=0;
+    int res=-1;
+    while (!found && index<=TabSymb.sommetPile){
+        if (strcmp(TabSymb.table[index].name, name)){
+            found=1;
+            res=index;
+        }
+        index++;
+    }
+    return res;
+}
+
 void ts_dec_depth(){
-    while (TabSymb.sommetPile>=0 && (TabSymb.sommetPile)==(TabSymb.table[TabSymb.sommetPile]).profondeur){
+    while (TabSymb.sommetPile>=0 && ((TabSymb.table[TabSymb.sommetPile]).profondeur==profondeur)){
         TabSymb.sommetPile--;
     }
+    profondeur--;
+}
+
+int getSommet(){
+    return TabSymb.sommetPile;
 }
 

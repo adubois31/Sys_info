@@ -1,9 +1,10 @@
 main (){
-	int a;
-	int b;
+	int a=3;
+	int b=4;
 	if (a<b){
 		int p1;
 		p1=b-a;
+		printf(p1);
 
 	}
 	else {
