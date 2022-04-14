@@ -70,7 +70,7 @@ Label_uut: ALU PORT MAP (
     S => S_out
     );
 
-Ctrl_Alu_in <= "00", "01" after 20 ns;
-A_in <= "00000001" , "00000011" after 20 ns;
-B_in <=X"05", "00000010" after 10 ns;
+Ctrl_Alu_in <= "01", "10" after 20 ns;
+A_in <= X"01" , X"32" after 20 ns, X"01" after 30 ns;
+B_in <=X"05", "00111111" after 10 ns;
 end Behavioral;

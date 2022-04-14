@@ -58,11 +58,15 @@ S_out<= A_in+B_in when  Ctrl_Alu="00" else
         A_in - B_in when Ctrl_Alu="01" else
         A * B when Ctrl_Alu="10";
 
+C<=S_out(8) when Ctrl_Alu="00" else
+    '0';
+N<= S_out(7) when Ctrl_Alu="01" else
+    '0';
+O<='1' when (Ctrl_Alu="10") and ((S_out and "1111111100000000") /= 0) else
+   '0';
 
-C<='1' when S_out(8)='1';
-N<='1' when S_out<0;
-O<='1' when (S_out and "1111111100000000") /= 0;
-Z<='1' when S_out=0;
+Z<='1' when S_out=0 else 
+   '0';
     
 S<=S_out(7 downto 0);
 
