@@ -2,3 +2,46 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/m
 INFO: [VRFC 10-307] analyzing entity ALU
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+ERROR: [VRFC 10-1412] syntax error near signal [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:50]
+ERROR: [VRFC 10-91] b_in is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:55]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:60]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:61]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:62]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:63]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:68]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:69]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:70]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:71]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:73]
+ERROR: [VRFC 10-1504] unit behavioral ignored due to previous errors [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:46]
+INFO: [VRFC 10-240] VHDL file /home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd ignored due to errors
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU

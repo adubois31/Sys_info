@@ -3,8 +3,6 @@ Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
 Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
-WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

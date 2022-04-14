@@ -2,11 +2,44 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Thu Apr 14 09:37:27 2022
-# Process ID: 3810
-# Current directory: /home/delambre/Bureau/4A/Systeme info/microprocesseur
+# Start of session at: Thu Apr 14 09:51:32 2022
+# Process ID: 9508
+# Current directory: /home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur
 # Command line: vivado
-# Log file: /home/delambre/Bureau/4A/Systeme info/microprocesseur/vivado.log
-# Journal file: /home/delambre/Bureau/4A/Systeme info/microprocesseur/vivado.jou
+# Log file: /home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/vivado.log
+# Journal file: /home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/vivado.jou
 #-----------------------------------------------------------
 start_gui
+open_project {/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+source Test_ALU.tcl
+run all
+run all
+run all
+close_sim
+launch_simulation
+source Test_ALU.tcl
+close_sim
+launch_simulation
+source Test_ALU.tcl
+add_bp {/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd} 76
+remove_bps -file {/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd} -line 76
+close_sim
+launch_simulation
+source Test_ALU.tcl
+close_sim
+launch_simulation
+source Test_ALU.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source Test_ALU.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim

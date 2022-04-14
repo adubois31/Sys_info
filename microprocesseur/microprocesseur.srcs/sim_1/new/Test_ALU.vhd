@@ -36,22 +36,20 @@ end Test_ALU;
 
 architecture Behavioral of Test_ALU is
 
-COMPONENT ALU
-PORT(
-           A : in STD_LOGIC_VECTOR (7 downto 0);
+COMPONENT ALU is
+    Port ( A : in STD_LOGIC_VECTOR (7 downto 0);
            B : in STD_LOGIC_VECTOR (7 downto 0);
            Ctrl_Alu : in STD_LOGIC_VECTOR (1 downto 0);
-           S : out STD_LOGIC_VECTOR (7 downto 0);
-           Z : out STD_LOGIC;
+           N : out STD_LOGIC;
            O : out STD_LOGIC;
+           Z : out STD_LOGIC;
            C : out STD_LOGIC;
-           N : out STD_LOGIC
-);
+           S : out STD_LOGIC_VECTOR (7 downto 0));
 END COMPONENT;
 
-signal A_in : STD_LOGIC_VECTOR(7 downto 0):=(others=>'0');
-signal B_in : STD_LOGIC_VECTOR(7 downto 0):=(others=>'0');
-signal Ctrl_Alu_in : STD_LOGIC_VECTOR(1 downto 0):=(others=>'0');
+signal A_in : STD_LOGIC_VECTOR(7 downto 0);
+signal B_in : STD_LOGIC_VECTOR(7 downto 0);
+signal Ctrl_Alu_in : STD_LOGIC_VECTOR(1 downto 0);
 
 signal Z_out : STD_LOGIC;
 signal O_out : STD_LOGIC;
@@ -65,14 +63,14 @@ Label_uut: ALU PORT MAP (
     A => A_in,
     B => B_in,
     Ctrl_Alu => Ctrl_Alu_in,
+    N => N_out,
+    O => O_out,
     Z => Z_out,
     C => C_out,
-    O => O_out,
-    N => N_out,
     S => S_out
     );
 
-Ctrl_Alu_in <= "00" after 10 ns;
-A_in <= "00000001" after 10 ns;
-B_in <= "00000010" after 10 ns;
+Ctrl_Alu_in <= "00", "01" after 20 ns;
+A_in <= "00000001" , "00000011" after 20 ns;
+B_in <=X"05", "00000010" after 10 ns;
 end Behavioral;

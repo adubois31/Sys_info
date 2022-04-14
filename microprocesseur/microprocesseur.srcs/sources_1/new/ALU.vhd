@@ -22,6 +22,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
+use IEEE.std_logic_arith.all;
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
 --use IEEE.NUMERIC_STD.ALL;
@@ -44,24 +45,21 @@ end ALU;
 
 architecture Behavioral of ALU is
 
-signal A_in : std_logic_vector(15 downto 0):=("00000000"&A);
-signal B_in : std_logic_vector(15 downto 0):=("00000000"&B);
-signal S_out : std_logic_vector(15 downto 0):=(others=>'0');
+signal A_in : std_logic_vector(15 downto 0);
+signal B_in : std_logic_vector(15 downto 0);
+signal S_out : std_logic_vector(15 downto 0);
 
 begin
 
-process(Ctrl_Alu)
-begin
-case Ctrl_Alu is 
-    when "00" => S_out<=A_in+B_in;
-    when "01" => S_out<=A_in-B_in;
-    when "10" => S_out<=A_in*B_in;
-    when others => S_out<=S_out;
-end case;
+A_in <= "00000000"&A ;
+B_in<= "00000000"&B;
 
-end process;
+S_out<= A_in+B_in when  Ctrl_Alu="00" else
+        A_in - B_in when Ctrl_Alu="01" else
+        A * B when Ctrl_Alu="10";
 
-C<='1' when S_out(9)='1';
+
+C<='1' when S_out(8)='1';
 N<='1' when S_out<0;
 O<='1' when (S_out and "1111111100000000") /= 0;
 Z<='1' when S_out=0;
