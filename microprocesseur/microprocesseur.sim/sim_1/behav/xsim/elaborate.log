@@ -1,17 +1,15 @@
 Vivado Simulator 2018.2
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_Banc_Registres_behav xil_defaultlib.Test_Banc_Registres -log elaborate.log 
 Using 8 slave threads.
 Starting static elaboration
-Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
-Compiling architecture behavioral of entity xil_defaultlib.test_alu
-Built simulation snapshot Test_ALU_behav
+ERROR: [VRFC 10-718] formal port <A> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:41]
+ERROR: [VRFC 10-718] formal port <B> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:42]
+ERROR: [VRFC 10-718] formal port <W> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:43]
+ERROR: [VRFC 10-718] formal port <Write> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:44]
+ERROR: [VRFC 10-718] formal port <DATA> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:45]
+ERROR: [VRFC 10-718] formal port <RST> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:46]
+ERROR: [VRFC 10-718] formal port <CLK> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:47]
+ERROR: [VRFC 10-718] formal port <QA> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:48]
+ERROR: [VRFC 10-718] formal port <QB> does not exist in entity <Banc_Registres>.  Please compare the definition of block <Banc_Registres> to its component declaration and its instantion to detect the mismatch. [/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd:49]
+ERROR: [XSIM 43-3321] Static elaboration of top level VHDL design unit test_banc_registres in library work failed.

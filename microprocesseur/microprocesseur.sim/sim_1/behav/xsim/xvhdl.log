@@ -1,2 +1,2 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
-INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_Banc_Registres.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_Banc_Registres
