@@ -1,0 +1,12 @@
+
+{ 
+    crc :  2882252580333844052  , 
+    ccp_crc :  0  , 
+    cmdline : " -wto a12ed03533ae451b81149428f0a7fb1e --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_Banc_Registres_behav xil_defaultlib.Test_Banc_Registres" , 
+    buildDate : "Jun 14 2018" , 
+    buildTime : "20:07:38" , 
+    linkCmd : "/usr/bin/gcc -Wa,-W  -O -fPIC  -m64  -Wl,--unresolved-symbols=ignore-all  -o \"xsim.dir/Test_Banc_Registres_behav/xsimk\"   \"xsim.dir/Test_Banc_Registres_behav/obj/xsim_0.lnx64.o\" \"xsim.dir/Test_Banc_Registres_behav/obj/xsim_1.lnx64.o\" \"/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/lib/lnx64.o/librdi_simulator_kernel.so\"  \"/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/lib/lnx64.o/librdi_simbridge_kernel.so\"" , 
+    aggregate_nets : 
+    [ 
+    ] 
+} 
