@@ -1,0 +1,101 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:02:38 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 4328
+License: Customer
+
+Current time: 	Fri Apr 22 09:31:52 CEST 2022
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Ubuntu
+OS Version: 5.13.0-40-generic
+OS Architecture: amd64
+Available processors (cores): 12
+
+Display: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 216 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/tps/lnx64/jre
+Java executable location: 	/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/tps/lnx64/jre/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	a_dubois
+User home directory: /home/a_dubois
+User working directory: /home/a_dubois/Bureau/4 I/Sys_info/microprocesseur
+User country: 	FR
+User language: 	fr
+User locale: 	fr_FR
+
+RDI_BASEROOT: /usr/local/insa/Xilinx.VIVADO/Vivado
+HDI_APPROOT: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2
+RDI_DATADIR: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/data
+RDI_BINDIR: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin
+
+Vivado preferences file location: /home/a_dubois/.Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: /home/a_dubois/.Xilinx/Vivado/2018.2/
+Vivado layouts directory: /home/a_dubois/.Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/vivado.log
+Vivado journal file location: 	/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-4328-insa-11289
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: /usr/local/insa/Xilinx.VIVADO/Xilinx.lic
+XILINX_DSP: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2
+XILINX_SDK: /usr/local/insa/Xilinx.VIVADO/SDK/2018.2
+XILINX_VIVADO: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2
+XILINX_VIVADO_HLS: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2
+
+
+GUI allocated memory:	184 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 968 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 56 MB (+56101kb) [00:00:05]
+// [Engine Memory]: 930 MB (+823552kb) [00:00:05]
+selectButton(PAResourceEtoH.GettingStartedView_OPEN_PROJECT, "Open Project"); // x (w, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+// HMemoryUtils.trashcanNow. Engine heap size: 969 MB. GUI used memory: 45 MB. Current time: 4/22/22 9:31:54 AM CEST
+setFileChooser("/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.xpr");
+// bx (ck):  Open Project : addNotify
+// Opening Vivado Project: /home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.xpr. Version: Vivado v2018.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project {/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.xpr} 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project {/home/a_dubois/Bureau/4 I/Sys_info/microprocesseur/microprocesseur.xpr} 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// [GUI Memory]: 60 MB (+1276kb) [00:00:14]
+// [Engine Memory]: 981 MB (+5170kb) [00:00:14]
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 1,060 MB (+31116kb) [00:00:15]
+// Project name: microprocesseur; location: /home/a_dubois/Bureau/4 I/Sys_info/microprocesseur; part: xc7a35tcpg236-1
+// 'i' command handler elapsed time: 9 seconds
+// [GUI Memory]: 71 MB (+8667kb) [00:00:16]
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 

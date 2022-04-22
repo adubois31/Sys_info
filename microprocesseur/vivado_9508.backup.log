@@ -1,0 +1,670 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Thu Apr 14 09:51:32 2022
+# Process ID: 9508
+# Current directory: /home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur
+# Command line: vivado
+# Log file: /home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/vivado.log
+# Journal file: /home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.xpr}
+INFO: [Project 1-313] Project file moved from '/home/delambre/Bureau/4A/Systeme info/microprocesseur' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+
+****** Webtalk v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source /home/delambre/Bureau/4A/Systeme -notrace
+couldn't read file "/home/delambre/Bureau/4A/Systeme": illegal operation on a directory
+INFO: [Common 17-206] Exiting Webtalk at Thu Apr 14 10:01:10 2022...
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Test_ALU_behav -key {Behavioral:sim_1:Functional:Test_ALU} -tclbatch {Test_ALU.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Test_ALU.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Test_ALU_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 6290.996 ; gain = 65.820 ; free physical = 58179 ; free virtual = 70315
+run all
+run all
+run all
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Test_ALU_behav -key {Behavioral:sim_1:Functional:Test_ALU} -tclbatch {Test_ALU.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Test_ALU.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Test_ALU_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Test_ALU_behav -key {Behavioral:sim_1:Functional:Test_ALU} -tclbatch {Test_ALU.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Test_ALU.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Test_ALU_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+add_bp {/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd} 76
+remove_bps -file {/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd} -line 76
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Test_ALU_behav -key {Behavioral:sim_1:Functional:Test_ALU} -tclbatch {Test_ALU.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Test_ALU.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Test_ALU_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Test_ALU_behav -key {Behavioral:sim_1:Functional:Test_ALU} -tclbatch {Test_ALU.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Test_ALU.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Test_ALU_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:47]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sim_1/new/Test_ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Test_ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-1625] value in initialization depends on signal a [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:48]
+WARNING: [VRFC 10-1625] value in initialization depends on signal b [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:49]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Test_ALU_behav -key {Behavioral:sim_1:Functional:Test_ALU} -tclbatch {Test_ALU.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+source Test_ALU.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Test_ALU_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+ERROR: [VRFC 10-1412] syntax error near signal [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:50]
+ERROR: [VRFC 10-91] b_in is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:55]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:60]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:61]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:62]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:63]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:68]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:69]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:70]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:71]
+ERROR: [VRFC 10-91] s_out is not declared [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:73]
+ERROR: [VRFC 10-1504] unit behavioral ignored due to previous errors [/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd:46]
+INFO: [VRFC 10-240] VHDL file /home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd ignored due to errors
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim/xvhdl.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim/xvhdl.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'Test_ALU' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+xvhdl --incr --relax -prj Test_ALU_vhdl.prj
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/delambre/Bureau/4A/Systeme info/Sys_info/microprocesseur/microprocesseur.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.2
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin/unwrapped/lnx64.o/xelab -wto 85d1cba964a84c62bf386e640c18275c --incr --debug typical --relax --mt 8 -L xil_defaultlib -L secureip --snapshot Test_ALU_behav xil_defaultlib.Test_ALU -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.test_alu
+Built simulation snapshot Test_ALU_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2018.2
+Time resolution is 1 ps
