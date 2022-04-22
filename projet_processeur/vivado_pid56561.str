@@ -950,3 +950,194 @@ selectButton(RDIResource.GraphicalView_ZOOM_OUT, "Waveform Viewer_zoom_out"); //
 // TclEventType: WAVEFORM_UPDATE_WAVEFORM
 // HMemoryUtils.trashcanNow. Engine heap size: 1,172 MB. GUI used memory: 56 MB. Current time: 4/22/22 12:03:30 PM CEST
 // TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 161 seconds
+selectTab((HResource) null, (HResource) null, "Sources", 1); // aE (Q, ck)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (ck): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, (String) null); // X (Q, F)
+selectComboBox(PAResourceAtoD.CreateSrcFileDialog_FILE_TYPE, "VHDL", 3); // cl (Q, F)
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "Memoire_donnees"); // X (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 19 seconds
+dismissDialog("Add Sources"); // c (ck)
+// Tcl Message: close [ open /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_donnees.vhd w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_donnees.vhd 
+// I (ck): Define Module: addNotify
+setText(PAResourceAtoD.DefineModulesDialog_ENTITY_NAME, "Memoire_donnees"); // X (Q, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 0, (String) null, 0); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "adr", 0, "Port Name", 0); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "adr ; in ; false ; 0 ; 0", 0, "false", 2); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "adr ; in ; true ; 0 ; 0", 0, "0", 3); // ab (O, I)
+// Elapsed time: 11 seconds
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "7", 0, "MSB", 3); // ab (O, I)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,177 MB. GUI used memory: 69 MB. Current time: 4/22/22 12:06:38 PM CEST
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "IN", 1, "Port Name", 0); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "IN ; in ; false ; 0 ; 0", 1, "false", 2); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "IN ; in ; true ; 0 ; 0", 1, "0", 3); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "7", 1, "MSB", 3); // ab (O, I)
+selectButton(RDIResource.AbstractCombinedPanel_ADD_ELEMENT, "Add Definition"); // B (f, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "RW", 2, "Port Name", 0); // ab (O, I)
+selectButton(RDIResource.AbstractCombinedPanel_ADD_ELEMENT, "Add Definition"); // B (f, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 3, (String) null, 0); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "RST", 3, "Port Name", 0); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 4, (String) null, 0); // ab (O, I)
+selectButton(RDIResource.AbstractCombinedPanel_ADD_ELEMENT, "Add Definition"); // B (f, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "CLK", 4, "Port Name", 0); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 5, (String) null, 0); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "OUT", 5, "Port Name", 0); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "OUT ; in ; false ; 0 ; 0", 5, "in", 1); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "out", 5, "Direction", 1); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "OUT ; out ; false ; 0 ; 0", 5, "false", 2); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "OUT ; out ; true ; 0 ; 0", 5, "0", 3); // ab (O, I)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "7", 5, "MSB", 3); // ab (O, I)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // I (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [GUI Memory]: 120 MB (+4132kb) [00:10:23]
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 1,203 MB (+16609kb) [00:10:26]
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,203 MB. GUI used memory: 96 MB. Current time: 4/22/22 12:07:18 PM CEST
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files]", 1); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, Memoire_donnees.vhd]", 2, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Syntax Error Files, Memoire_donnees.vhd]", 2, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectCodeEditor("Memoire_donnees.vhd", 88, 352); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 94, 406); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 87, 353); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 158, 444); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 91, 352); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 298, 423); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 93, 351); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 95, 417); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 216, 427); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 126 MB (+520kb) [00:11:04]
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,228 MB. GUI used memory: 91 MB. Current time: 4/22/22 12:07:58 PM CEST
+// Elapsed time: 10 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // B (f, ck)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (ck): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a (C, c)
+// F (c): Create Source File: addNotify
+selectComboBox(PAResourceAtoD.CreateSrcFileDialog_FILE_TYPE, "VHDL", 3); // cl (Q, F)
+// Elapsed time: 16 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "Memoire_instructions"); // X (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 23 seconds
+dismissDialog("Add Sources"); // c (ck)
+// Tcl Message: close [ open /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd 
+// [GUI Memory]: 135 MB (+2171kb) [00:11:44]
+// I (ck): Define Module: addNotify
+setText(PAResourceAtoD.DefineModulesDialog_ENTITY_NAME, "Memoire_instructions"); // X (Q, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 0, (String) null, 0); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "adr_inst", 0, "Port Name", 0); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "adr_inst ; in ; false ; 0 ; 0", 0, "false", 2); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "adr_inst ; in ; true ; 0 ; 0", 0, "0", 3); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "7", 0, "MSB", 3); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 1, (String) null, 0); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "CLK", 1, "Port Name", 0); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, " ; in ; false ; 0 ; 0", 2, (String) null, 0); // ab (O, I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "Output", 2, "Port Name", 0); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "Output ; in ; false ; 0 ; 0", 2, "false", 2); // ab (O, I)
+selectTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "Output ; in ; true ; 0 ; 0", 2, "0", 3); // ab (O, I)
+// Elapsed time: 11 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+editTable(PAResourceAtoD.DefineModulesDialog_DEFINE_MODULES_AND_SPECIFY_IO_PORTS, "31", 2, "MSB", 3); // ab (O, I)
+// TclEventType: FILE_SET_CHANGE
+dismissDialog("Define Module"); // I (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,262 MB. GUI used memory: 73 MB. Current time: 4/22/22 12:09:23 PM CEST
+// Elapsed time: 61 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Untitled 2", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_donnees.vhd", 2); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_donnees.vhd", 1); // k (j, ck)
+// TclEventType: WAVEFORM_CLOSE_WCFG
+closeView(RDIResource.RDIViews_WAVEFORM_VIEWER, "Untitled 2"); // w
+// Elapsed time: 14 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Banc_Registres(Behavioral) (Banc_registres.vhd)]", 1, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Banc_Registres(Behavioral) (Banc_registres.vhd)]", 1, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_donnees.vhd", 1); // k (j, ck)
+// Elapsed time: 41 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Test_Banc_Registres.vhd", 0); // k (j, ck)
+// Elapsed time: 52 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_donnees.vhd", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Banc_registres.vhd", 2); // k (j, ck)
+selectCodeEditor("Banc_registres.vhd", 4, 279); // ce (w, ck)
+typeControlKey((HResource) null, "Banc_registres.vhd", 'c'); // ce (w, ck)
+// [Engine Memory]: 1,263 MB (+43kb) [00:15:36]
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_donnees.vhd", 1); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Banc_registres.vhd", 2); // k (j, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_donnees.vhd", 1); // k (j, ck)
+selectCodeEditor("Memoire_donnees.vhd", 1, 488); // ce (w, ck)
+typeControlKey((HResource) null, "Memoire_donnees.vhd", 'v'); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 1, 252); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 212, 247); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 61, 265); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 61, 265, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memoire_donnees.vhd", 110, 263); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 110, 263, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memoire_donnees.vhd", 109, 309); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 86, 369); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 86, 369, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memoire_donnees.vhd", 101, 370); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 101, 370, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memoire_donnees.vhd", 119, 383); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 119, 383, false, false, false, false, true); // ce (w, ck) - Double Click
+// Elapsed time: 12 seconds
+selectCodeEditor("Memoire_donnees.vhd", 141, 382); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 89, 396); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 89, 396, false, false, false, false, true); // ce (w, ck) - Double Click
+selectCodeEditor("Memoire_donnees.vhd", 262, 394); // ce (w, ck)
+// Elapsed time: 16 seconds
+selectCodeEditor("Memoire_donnees.vhd", 316, 393); // ce (w, ck)
+// Elapsed time: 37 seconds
+selectCodeEditor("Memoire_donnees.vhd", 84, 396); // ce (w, ck)
+typeControlKey((HResource) null, "Memoire_donnees.vhd", 'c'); // ce (w, ck)
+selectCodeEditor("Memoire_donnees.vhd", 151, 432); // ce (w, ck)
+typeControlKey((HResource) null, "Memoire_donnees.vhd", 'v'); // ce (w, ck)
+// Elapsed time: 26 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Banc_registres.vhd", 2); // k (j, ck)
+selectCodeEditor("Banc_registres.vhd", 182, 353); // ce (w, ck)
+typeControlKey((HResource) null, "Banc_registres.vhd", 'c'); // ce (w, ck)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_donnees.vhd", 1); // k (j, ck)
+selectCodeEditor("Memoire_donnees.vhd", 216, 338); // ce (w, ck)
+typeControlKey((HResource) null, "Memoire_donnees.vhd", 'v'); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+selectCodeEditor("Memoire_donnees.vhd", 274, 503); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,307 MB. GUI used memory: 69 MB. Current time: 4/22/22 12:15:23 PM CEST
+// TclEventType: DG_GRAPH_GENERATED

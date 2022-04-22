@@ -124,3 +124,9 @@ source Test_Banc_Registres.tcl
 # run 1000ns
 INFO: [USF-XSim-96] XSim completed. Design snapshot 'Test_Banc_Registres_behav' loaded.
 INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close [ open /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_donnees.vhd w ]
+add_files /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_donnees.vhd
+update_compile_order -fileset sources_1
+close [ open /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd w ]
+add_files /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd
+update_compile_order -fileset sources_1
