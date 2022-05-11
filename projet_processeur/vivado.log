@@ -130,3 +130,7 @@ update_compile_order -fileset sources_1
 close [ open /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd w ]
 add_files /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd
 update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 22 12:16:36 2022...

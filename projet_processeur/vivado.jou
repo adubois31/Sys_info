@@ -23,3 +23,4 @@ update_compile_order -fileset sources_1
 close [ open /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd w ]
 add_files /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd
 update_compile_order -fileset sources_1
+close_sim
