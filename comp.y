@@ -14,8 +14,8 @@ int is_const = 0;
 %token <nb> tNB
 %left tADD tSOU
 %left tMUL tDIV
-%type  Body VarInt Var Const Declaration  Expr  If Condition While
-%type <nb> Terme Operation Expr
+%type  Body VarInt Var Const Declaration  Expr  If  While
+%type <nb> Terme Operation Expr Condition
 %start Programme
 %%
 Programme :	  tMAIN  tPO  tPF   Body
@@ -81,8 +81,10 @@ void yyerror(char *s) {
 int main(void) {
 
       yydebug = 1;
+      initTabIns();
       printf("Lancement parsing\n"); // yydebug=1;
       TSinit();
       yyparse();
+      printTabIns();
       return 0;
 }

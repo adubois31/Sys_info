@@ -1,13 +1,6 @@
 main (){
 	int a=3;
-	int b=4;
-	if (a<b){
-		int p1;
-		p1=b-a;
-		printf(p1);
-
-	}
-	else {
-		b=b+1;
-	}
+	int b=7;
+	a=a+b;
+	b=a+b;
 }
