@@ -3,3 +3,5 @@ void popTS();
 void printTS();
 void TSinit();
 int getSommet();
+int popTemp();
+int pushTemp(int nb);

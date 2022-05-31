@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#define TABLE_SIZE 1000
 
 
 typedef struct{
@@ -11,11 +12,17 @@ typedef struct{
 } Symbole;
 
 typedef struct{
-    Symbole table [1000] ;
+    Symbole table [TABLE_SIZE] ;
     int sommetPile;
 } TS;
 
+typedef struct{
+    int tableTemp[TABLE_SIZE];
+    int sommetTemp;
+}Ttemp;
+
 TS TabSymb;
+Ttemp TabTemp;
 int profondeur;
 
 void ts_inc_depth(){
@@ -24,6 +31,7 @@ void ts_inc_depth(){
 
 void TSinit(){
     TabSymb.sommetPile=-1;
+    TabTemp.sommetTemp=-1;
     profondeur=-1;
 }
 
@@ -51,6 +59,27 @@ void pushTS(char name [16],int isConst){
     TabSymb.sommetPile++;
     TabSymb.table[TabSymb.sommetPile]=newElem;
     printTS();
+}
+
+int pushTemp(int nb){
+
+    if (TabTemp.sommetTemp>=TABLE_SIZE){
+        printf("Temporary Table full\n");
+        return -1;
+    }
+    TabTemp.sommetTemp++;
+    TabTemp.tableTemp[TabTemp.sommetTemp]=nb;
+    return TabTemp.sommetTemp;
+}
+
+int popTemp(){
+    if (TabTemp.sommetTemp<=0){
+        printf("Temporary Table empty");
+        return -1;
+    }
+    int res =  TabTemp.tableTemp[TabTemp.sommetTemp];
+    TabTemp.sommetTemp--;
+    return res;
 }
 
 int findAddr(char name[16]){
