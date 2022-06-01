@@ -43,7 +43,7 @@ end Memoire_donnees;
 
 architecture Behavioral of Memoire_donnees is
 
-type Memoire is array (0 to 255) of std_logic_vector (7 downto 0);
+type Memoire is array (0 to 16) of std_logic_vector (7 downto 0);
 signal mem : Memoire;
 signal clock : std_logic;
 

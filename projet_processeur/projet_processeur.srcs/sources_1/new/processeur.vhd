@@ -39,7 +39,7 @@ entity processeur is
 end processeur;
 
 architecture Behavioral of processeur is
-
+type int_array is array(0 to 3) of STD_LOGIC_VECTOR (7 downto 0);
 
 --section memoire donnees
 COMPONENT Memoire_donnees is
@@ -128,14 +128,17 @@ signal DIEX_C : STD_LOGIC_VECTOR (7 downto 0);
 signal EXMEM_OP : STD_LOGIC_VECTOR (7 downto 0);
 signal EXMEM_A : STD_LOGIC_VECTOR (7 downto 0);
 signal EXMEM_B : STD_LOGIC_VECTOR (7 downto 0);
-signal EXMEM_C : STD_LOGIC_VECTOR (7 downto 0);
 
 signal MEMRE_OP : STD_LOGIC_VECTOR (7 downto 0);
 signal MEMRE_A : STD_LOGIC_VECTOR (7 downto 0);
 signal MEMRE_B : STD_LOGIC_VECTOR (7 downto 0);
-signal MEMRE_C : STD_LOGIC_VECTOR (7 downto 0);
 
+signal LIDI_MUX : STD_LOGIC_VECTOR (7 downto 0);
+signal DIEX_MUX : STD_LOGIC_VECTOR (7 downto 0);
+signal MEMRE_MUX1 : STD_LOGIC_VECTOR (7 downto 0);
+signal MEMRE_MUX2 : STD_LOGIC_VECTOR (7 downto 0);
 
+signal Table_count : integer := 0;
 
 begin
 Label_Banc_registres: Banc_Registres port map (
@@ -181,89 +184,111 @@ CLK_in<=CLK;
 Adr_inst_in<=IP;
 
 
-LI: process
+Gestion_alea : process
+variable Table_alea : int_array;
+variable Alea : boolean;
 begin
+    Alea := false;
     wait until rising_edge (CLK_in) ;
+    for index in 0 to 3 loop
+        if (Table_alea(index)=Inst_out(15 downto 8) or Table_alea(index)=Inst_out(7 downto 0)) then
+            Alea:=true;
+        end if;
+    end loop;
+    if not Alea then
         LIDI_OP<=Inst_out(31 downto 24);
-        LIDI_A<=Inst_out(23 downto 16);
-        LIDI_B<=Inst_out(15 downto 8);
-        LIDI_C<=Inst_out(7 downto 0);
-        wait on fin_inst'event;
+        Table_alea(Table_count):=Inst_out(23 downto 16);
+        IP<=STD_LOGIC_VECTOR((UNSIGNED(IP)+1));
+    else
+        LIDI_OP<=X"00";
+        Table_alea(Table_count):=X"00";
+    end if;
+    Table_count<=(Table_count+1) mod 4;
+    LIDI_A<=Inst_out(23 downto 16);
+    LIDI_B<=Inst_out(15 downto 8);
+    LIDI_C<=Inst_out(7 downto 0);
+
+
 end process;
 
 
-Reg_A_in <= LIDI_B(3 downto 0) when (LIDI_OP=X"05" or LIDI_OP=X"01" or LIDI_OP=X"02" or LIDI_OP=X"03" or LIDI_OP=X"04");
-Reg_B_in<=LIDI_C(3 downto 0) when (LIDI_OP=X"01" or LIDI_OP=X"02" or LIDI_OP=X"03" or LIDI_OP=X"04");
+Reg_A_in <= LIDI_B(3 downto 0);
+LIDI_MUX <= QA_out when (LIDI_OP=X"05" or LIDI_OP=X"01"or LIDI_OP=X"02" or LIDI_OP=X"03" or LIDI_OP=X"08") else
+            LIDI_B;
+Reg_B_in<=LIDI_C(3 downto 0);
+    
 
 DI : process
     begin
     wait until rising_edge (CLK_in);
-        case LIDI_OP is
-        when X"01"|X"02"|X"03"|X"04"=>DIEX_OP<=LIDI_OP;
-                                      DIEX_A<=LIDI_A;
-                                      DIEX_B<=QA_out;
-                                      DIEX_C<=QB_out;
-        when X"05"=>DIEX_OP<=LIDI_OP;
-                    DIEX_A<=LIDI_A;
-                    --Reg_A_in<=LIDI_B(3 downto 0);
-                    DIEX_B<=QA_out;
-                    DIEX_C<=LIDI_C;
-                    
-        when X"06" =>DIEX_OP<=LIDI_OP; 
-                     DIEX_A<=LIDI_A;
-                     DIEX_B<=LIDI_B;
-                     DIEX_C<=LIDI_C;
-        when others => null;
-        end case;
+        DIEX_OP<=LIDI_OP;
+        DIEX_A<=LIDI_A;
+        DIEX_B<=LIDI_MUX;
+        DIEX_C <=QB_out;
+
 end process;
 
-ALU_A_in<=DIEX_B when (DIEX_OP=X"01" or DIEX_OP=X"02" or DIEX_OP=X"03" or DIEX_OP=X"04");
-ALU_B_in<=DIEX_C when (DIEX_OP=X"01" or DIEX_OP=X"02" or DIEX_OP=X"03" or DIEX_OP=X"04");
+ALU_A_in <=DIEX_B;
+ALU_B_in <= DIEX_C;
 Ctrl_Alu_in <= "00" when DIEX_OP=X"01" else
-               "01" when DIEX_OP=X"02" else
-               "10" when DIEX_OP=X"03";
+               "10" when DIEX_OP=X"02" else
+               "01" when DIEX_OP=X"03";
+
+DIEX_MUX <= S_out when (DIEX_OP=X"01" or DIEX_OP=X"02" or DIEX_OP=X"03" ) else
+            DIEX_B;
                
 
 EX : process
     begin
         wait until rising_edge (CLK_in);
-        case DIEX_OP is
-        when X"01"|X"02"|X"03"=>EXMEM_OP<=DIEX_OP;
-                                EXMEM_A<=DIEX_A;
-                                EXMEM_B<=S_out;
-                                
-        when X"05"|X"06" =>EXMEM_OP<=DIEX_OP;
-                           EXMEM_A<=DIEX_A;
-                           EXMEM_B<=DIEX_B;
-        when others => null;
-       end case;
+        EXMEM_OP<=DIEX_OP;
+        EXMEM_A<=DIEX_A;
+        EXMEM_B<=DIEX_MUX;
 end process;
+
+
+MEMRE_MUX1<= EXMEM_B when EXMEM_OP=X"07" else
+             EXMEM_A when EXMEM_OP=X"08";
+adr_data_in<=MEMRE_MUX1;
+RW_in<='0' when EXMEM_OP=X"08" else
+       '1' ;
+Data_in <= EXMEM_B;
+MEMRE_MUX2<= Data_out when (EXMEM_OP=X"07")else
+             EXMEM_B;  
+
+
 
 MEM : process
     begin
     wait until rising_edge (CLK_in);
-    case EXMEM_OP is
-    when X"06"|X"05"|X"04"|X"03"|X"02"|X"01" => MEMRE_OP<=EXMEM_OP;
-                                                MEMRE_A<=EXMEM_A;
-                                                MEMRE_B<=EXMEM_B;
-    when others => null; 
-    end case;
-       
+    MEMRE_OP<=EXMEM_OP;
+    MEMRE_A<=EXMEM_A;
+    MEMRE_B<=MEMRE_MUX2;
 end process;
+
+
+-- MEMRE_MUX2
+
+
 
 RE : process
     begin
     wait until rising_edge (CLK_in);
     case MEMRE_OP is
-    when  X"06"|X"05"|X"04"|X"03"|X"02"|X"01" => Write_in<='1';
+    when X"07"|X"06"|X"05"|X"03"|X"02"|X"01" => 
+                 Write_in<='1';
                  W_in<=MEMRE_A(3 downto 0);
                  Registers_in<=MEMRE_B;
                  OUTPUT<=X"00000000";
-                 IP<=STD_LOGIC_VECTOR((UNSIGNED(IP)+1));
                  
+                 
+    when X"08" => Write_in<='0';
+                  W_in<=MEMRE_A(3 downto 0);
+                  Registers_in<=MEMRE_B;
+                  OUTPUT<=X"00000000";
+    when X"00"=>OUTPUT<=X"00000002";
     when others => OUTPUT<=X"00000001";
     end case;
-   
 end process;
 
 
@@ -273,33 +298,5 @@ end process;
 
 
 
---process
---    begin
---    wait until OP'event;
---    case OP is 
---    when X"01" => Reg_A_in<=B(3 downto 0);Reg_B_in<=C(3 downto 0);
---    when X"02" => Reg_A_in<=B(3 downto 0);Reg_B_in<=C(3 downto 0);
---    when X"03" => Reg_A_in<=B(3 downto 0);Reg_B_in<=C(3 downto 0);
---    when X"04" => Reg_A_in<=B(3 downto 0);Reg_B_in<=C(3 downto 0);
---    when X"05" => Reg_B_in<=B(3 downto 0);
---    when others => null;
---    end case;
---    end process;
-    
---process
---    variable temp_cpy : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
---    variable res_alu : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
---    begin
---    wait until rising_edge(CLK_in);
---    case OP is
---    when X"01" => ALU_A_in<=QA_out ;ALU_B_in <= QB_out;Ctrl_Alu_in<="00";Write_in<='1';W_in<=A(3 downto 0);Registers_in<=S_out;OUTPUT<=X"00000000";
---    when X"05" => temp_cpy:=QB_out;Write_in<='1';W_in<=A(3 downto 0);Registers_in<=temp_cpy;OUTPUT<=X"00000000";
---    when X"06" => Write_in<='1';W_in<=A(3 downto 0);Registers_in<=B;OUTPUT<=X"00000000";
---    when others => OUTPUT<=X"00000001";
---    end case;
---    IP<=STD_LOGIC_VECTOR((UNSIGNED(IP)+1));
-    
-    
---end process;
 
 end Behavioral;
