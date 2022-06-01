@@ -72,12 +72,16 @@
 #include <stdio.h>
 #include "ts.h"
 #include "assembleur.h"
+#include "interpreteur.h"
 void yyerror(char *s);
+
+extern FILE *yyin;
+
 
 int is_const = 0;
 
 
-#line 81 "y.tab.c"
+#line 85 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -195,10 +199,10 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 11 "comp.y"
+#line 15 "comp.y"
  int nb; char * var; 
 
-#line 202 "y.tab.c"
+#line 206 "y.tab.c"
 
 };
 typedef union YYSTYPE YYSTYPE;
@@ -576,11 +580,11 @@ static const yytype_int8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    22,    22,    23,    25,    25,    27,    28,    29,    30,
-      31,    32,    33,    34,    35,    36,    45,    45,    47,    53,
-      55,    59,    60,    61,    62,    64,    66,    74,    75,    75,
-      75,    76,    76,    79,    80,    81,    82,    87,    88,    89,
-      90,    91,    92
+       0,    26,    26,    27,    29,    29,    31,    32,    33,    34,
+      35,    36,    37,    38,    39,    40,    49,    49,    51,    57,
+      59,    63,    64,    65,    66,    68,    70,    78,    79,    79,
+      79,    80,    80,    83,    84,    85,    86,    91,    92,    93,
+      94,    95,    96
 };
 #endif
 
@@ -1430,19 +1434,19 @@ yyreduce:
   switch (yyn)
     {
   case 4:
-#line 25 "comp.y"
+#line 29 "comp.y"
            { ts_inc_depth(); }
-#line 1436 "y.tab.c"
+#line 1440 "y.tab.c"
     break;
 
   case 5:
-#line 25 "comp.y"
+#line 29 "comp.y"
                                           { ts_dec_depth(); }
-#line 1442 "y.tab.c"
+#line 1446 "y.tab.c"
     break;
 
   case 15:
-#line 36 "comp.y"
+#line 40 "comp.y"
                              {
                               int temp=popTemp(); 
                               //printf("ADDR DE TEMP ***************************: %d \n",temp );
@@ -1451,75 +1455,75 @@ yyreduce:
                               addInst2(COP,findAddr((yyvsp[-3].var)),temp);
                               //printTabIns();
                               }
-#line 1455 "y.tab.c"
+#line 1459 "y.tab.c"
     break;
 
   case 16:
-#line 45 "comp.y"
+#line 49 "comp.y"
                  { is_const = 1; }
-#line 1461 "y.tab.c"
+#line 1465 "y.tab.c"
     break;
 
   case 17:
-#line 45 "comp.y"
+#line 49 "comp.y"
                                            { is_const = 0; }
-#line 1467 "y.tab.c"
+#line 1471 "y.tab.c"
     break;
 
   case 18:
-#line 47 "comp.y"
+#line 51 "comp.y"
                           { pushTS((yyvsp[0].var),is_const); (yyval.var)=(yyvsp[0].var); }
-#line 1473 "y.tab.c"
+#line 1477 "y.tab.c"
     break;
 
   case 19:
-#line 53 "comp.y"
+#line 57 "comp.y"
                                       {addInst2(COP,findAddr((yyvsp[-3].var)),popTemp());}
-#line 1479 "y.tab.c"
+#line 1483 "y.tab.c"
     break;
 
   case 20:
-#line 55 "comp.y"
+#line 59 "comp.y"
                          {int addrTemp1=popTemp() ;
                         int addrTemp2=popTemp();
                         int addrTempRes = pushTemp();
                         addInst3(ADD,addrTempRes,addrTemp1,addrTemp2);(yyval.nb)=(yyvsp[-2].nb);}
-#line 1488 "y.tab.c"
+#line 1492 "y.tab.c"
     break;
 
   case 21:
-#line 59 "comp.y"
+#line 63 "comp.y"
                         {addInst3(SOU,(yyvsp[-2].nb),(yyvsp[-2].nb),(yyvsp[0].nb));(yyval.nb)=(yyvsp[-2].nb);}
-#line 1494 "y.tab.c"
+#line 1498 "y.tab.c"
     break;
 
   case 22:
-#line 60 "comp.y"
+#line 64 "comp.y"
                         {addInst3(MUL,(yyvsp[-2].nb),(yyvsp[-2].nb),(yyvsp[0].nb));(yyval.nb)=(yyvsp[-2].nb);}
-#line 1500 "y.tab.c"
+#line 1504 "y.tab.c"
     break;
 
   case 23:
-#line 61 "comp.y"
+#line 65 "comp.y"
                         {addInst3(DIV,(yyvsp[-2].nb),(yyvsp[-2].nb),(yyvsp[0].nb));(yyval.nb)=(yyvsp[-2].nb);}
-#line 1506 "y.tab.c"
+#line 1510 "y.tab.c"
     break;
 
   case 24:
-#line 62 "comp.y"
+#line 66 "comp.y"
              {(yyval.nb)=(yyvsp[0].nb);}
-#line 1512 "y.tab.c"
+#line 1516 "y.tab.c"
     break;
 
   case 25:
-#line 64 "comp.y"
+#line 68 "comp.y"
             {int adrTemp=pushTemp();
             addInst2(AFC, adrTemp, (yyvsp[0].nb));(yyval.nb)=adrTemp; }
-#line 1519 "y.tab.c"
+#line 1523 "y.tab.c"
     break;
 
   case 26:
-#line 66 "comp.y"
+#line 70 "comp.y"
                 {int adr = findAddr((yyvsp[0].var));
                   int adrTemp=pushTemp();
                   if (adr!=-1){
@@ -1527,69 +1531,69 @@ yyreduce:
                   }
                   (yyval.nb)=(yyvsp[0].var);
                   }
-#line 1531 "y.tab.c"
+#line 1535 "y.tab.c"
     break;
 
   case 27:
-#line 74 "comp.y"
+#line 78 "comp.y"
                                      {int temp=popTemp();addInst1(PRI,temp);}
-#line 1537 "y.tab.c"
+#line 1541 "y.tab.c"
     break;
 
   case 28:
-#line 75 "comp.y"
+#line 79 "comp.y"
                {(yyvsp[0].nb)=getLastInst()+1;}
-#line 1543 "y.tab.c"
+#line 1547 "y.tab.c"
     break;
 
   case 29:
-#line 75 "comp.y"
+#line 79 "comp.y"
                                                    {addInst2(JMF,(yyvsp[0].nb),-1);}
-#line 1549 "y.tab.c"
+#line 1553 "y.tab.c"
     break;
 
   case 30:
-#line 75 "comp.y"
+#line 79 "comp.y"
                                                                                     {addInst1(JMP,(yyvsp[-6].nb)) ;modifyJump((yyvsp[-6].nb),getLastInst()+1);}
-#line 1555 "y.tab.c"
+#line 1559 "y.tab.c"
     break;
 
   case 31:
-#line 76 "comp.y"
+#line 80 "comp.y"
                               {addInst2(JMF,(yyvsp[0].nb),-1);(yyvsp[-2].nb)=getLastInst();}
-#line 1561 "y.tab.c"
+#line 1565 "y.tab.c"
     break;
 
   case 32:
-#line 76 "comp.y"
+#line 80 "comp.y"
                                                                                 {modifyInstr((yyvsp[-5].nb),getLastInst()+1);}
-#line 1567 "y.tab.c"
+#line 1571 "y.tab.c"
     break;
 
   case 34:
-#line 80 "comp.y"
+#line 84 "comp.y"
                                       {addInst3(SUP,(yyvsp[-2].nb),(yyvsp[-2].nb),(yyvsp[0].nb));(yyval.nb)=(yyvsp[-2].nb);}
-#line 1573 "y.tab.c"
+#line 1577 "y.tab.c"
     break;
 
   case 36:
-#line 82 "comp.y"
+#line 86 "comp.y"
                                       {int addrTemp1=popTemp() ;
                                     int addrTemp2=popTemp();
                                     int addrTempRes = pushTemp();
                                     addInst3(INF,addrTempRes,addrTemp2,addrTemp1);
                                     (yyval.nb)=addrTempRes;}
-#line 1583 "y.tab.c"
+#line 1587 "y.tab.c"
     break;
 
   case 37:
-#line 87 "comp.y"
+#line 91 "comp.y"
                                         {addInst3(EQU,(yyvsp[-2].nb),(yyvsp[-2].nb),(yyvsp[0].nb));(yyval.nb)=(yyvsp[-2].nb);}
-#line 1589 "y.tab.c"
+#line 1593 "y.tab.c"
     break;
 
 
-#line 1593 "y.tab.c"
+#line 1597 "y.tab.c"
 
       default: break;
     }
@@ -1821,7 +1825,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 97 "comp.y"
+#line 101 "comp.y"
 
 
 void yyerror(char *s) {
@@ -1830,13 +1834,25 @@ void yyerror(char *s) {
  }
 
 
-int main(void) {
+int main(int argc, char** argv) {
 
       yydebug = 1;
       initTabIns();
+      
+      if(argc != 2) { 
+            fprintf(stderr, "Usage: %s <input file>\n", argv[0]); 
+            exit(1); 
+      } 
+      FILE *f = fopen(argv[1], "r"); 
+      if(f == NULL) { 
+            fprintf(stderr, "Failed to open file \"%s\".\n", argv[1]); 
+            exit(1); 
+      } 
+      yyin = f;
       printf("Lancement parsing\n"); // yydebug=1;
       TSinit();
       yyparse();
       printTabIns();
+      interpret();
       return 0;
 }

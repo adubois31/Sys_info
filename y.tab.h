@@ -119,7 +119,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 11 "comp.y"
+#line 15 "comp.y"
  int nb; char * var; 
 
 #line 126 "y.tab.h"

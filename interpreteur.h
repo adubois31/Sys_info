@@ -1,0 +1,5 @@
+
+
+void initInterpretTable();
+
+void interpret();

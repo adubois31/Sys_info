@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun  1 14:48:48 2022
+# Make data base, printed on Wed Jun  1 18:42:00 2022
 
 # Variables
 
@@ -23,7 +23,7 @@ OPAM_SWITCH_PREFIX = /mnt/commetud/GEI/OCaml/.opam/4.08.1
 # environment
 OCAML_TOPLEVEL_PATH = /mnt/commetud/GEI/OCaml/.opam/4.08.1/lib/toplevel
 # makefile (from 'Makefile', line 8)
-OBJ = y.tab.o lex.yy.o main.o ts.o assembleur.o
+OBJ = y.tab.o lex.yy.o main.o ts.o assembleur.o interpreteur.o
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -107,7 +107,6 @@ UBUNTU_MENUPROXY = 1
 # environment
 VSCODE_LOG_STACK = false
 # environment
- 
 ELECTRON_RUN_AS_NODE = 1
 # environment
 INVOCATION_ID = 6e9f8bc03c90405ab55426abbe3c25b6
@@ -266,7 +265,7 @@ VSCODE_PID = 2529
 # environment
 DBUS_STARTER_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f062b62975ff2
 # variable set hash-table stats:
-# Load=127/1024=12%, Rehash=0, Collisions=16/157=10%
+# Load=127/1024=12%, Rehash=0, Collisions=16/163=10%
 
 # Pattern-specific Variable Values
 
@@ -274,15 +273,16 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f06
 
 # Directories
 
-# . (device 62, inode 2760990933): 33 files, no impossibilities.
+# . (device 62, inode 2760990933): 32 files, no impossibilities.
 
-# 33 files, no impossibilities in 1 directories.
+# 32 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c
 #  recipe to execute (from 'Makefile', line 13):
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+ 
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
@@ -291,7 +291,7 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f06
 ts.o: ts.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ts'
-#  Last modified 2022-06-01 14:24:27.799687
+#  Last modified 2022-06-01 18:41:53.588681
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
@@ -302,12 +302,21 @@ all: comp
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 
 # Not a target:
 assembleur.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 14:12:18.955848
+#  Last modified 2022-06-01 18:29:29.99274
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+interpreteur.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-01 18:37:04.950515
 #  File has been updated.
 #  Successfully updated.
 
@@ -321,29 +330,31 @@ main.c:
 # Not a target:
 comp.l:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-31 18:48:06.933544
+#  Last modified 2022-06-01 16:24:37.166166
 #  File has been updated.
 #  Successfully updated.
 
-comp: y.tab.o lex.yy.o main.o ts.o assembleur.o
+comp: y.tab.o lex.yy.o main.o ts.o assembleur.o interpreteur.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-01 14:24:27.898684
+#  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 #  recipe to execute (from 'Makefile', line 22):
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@
 
 # Not a target:
 comp.y:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 14:24:22.449686
+#  Last modified 2022-06-01 18:28:37.187742
 #  File has been updated.
 #  Successfully updated.
 
 lex.yy.o: lex.yy.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'lex.yy'
-#  Last modified 2022-06-01 14:24:27.761685
+#  Last modified 2022-06-01 18:41:53.532676
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
@@ -352,7 +363,7 @@ lex.yy.o: lex.yy.c
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 10:47:57.087752
+#  Last modified 2022-06-01 18:41:26.991661
 #  File has been updated.
 #  Successfully updated.
 
@@ -373,7 +384,7 @@ ts.c:
 y.tab.o: y.tab.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'y.tab'
-#  Last modified 2022-06-01 14:24:27.693685
+#  Last modified 2022-06-01 18:41:53.442682
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
@@ -381,7 +392,7 @@ y.tab.o: y.tab.c
 
 lex.yy.c: comp.l
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-01 14:24:27.703689
+#  Last modified 2022-06-01 18:41:53.458677
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 19):
@@ -399,20 +410,46 @@ clean:
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 25):
 	rm $(OBJ) y.tab.c y.tab.h lex.yy.c y.output
- 
 
 assembleur.o: assembleur.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'assembleur'
-#  Last modified 2022-06-01 14:24:27.825683
+#  Last modified 2022-06-01 18:41:53.626684
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
+interpreteur.o: interpreteur.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'interpreteur'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := interpreteur.o
+# automatic
+# % := 
+# automatic
+# * := interpreteur
+# automatic
+# + := interpreteur.c
+# automatic
+# | := 
+# automatic
+# < := interpreteur.c
+# automatic
+# ^ := interpreteur.c
+# automatic
+# ? := interpreteur.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+
 y.tab.c: comp.y
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-01 14:24:27.6457
+#  Last modified 2022-06-01 18:41:53.377694
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 16):
@@ -421,26 +458,26 @@ y.tab.c: comp.y
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-01 14:24:27.7727
+#  Last modified 2022-06-01 18:41:53.551679
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 # files hash-table stats:
-# Load=19/1024=2%, Rehash=0, Collisions=0/55=0%
+# Load=21/1024=2%, Rehash=0, Collisions=0/61=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 47 / storage = 426 B / avg = 9 B
-# current buf: size = 8162 B / used = 426 B / count = 47 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 49 / storage = 454 B / avg = 9 B
+# current buf: size = 8162 B / used = 454 B / count = 49 / avg = 9 B
 
-# strcache performance: lookups = 80 / hit rate = 41%
+# strcache performance: lookups = 83 / hit rate = 40%
 # hash-table stats:
-# Load=47/8192=1%, Rehash=0, Collisions=1/80=1%
-# Finished Make data base on Wed Jun  1 14:48:48 2022
+# Load=49/8192=1%, Rehash=0, Collisions=1/83=1%
+# Finished Make data base on Wed Jun  1 18:42:00 2022
 
  

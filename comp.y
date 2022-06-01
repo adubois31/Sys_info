@@ -3,7 +3,11 @@
 #include <stdio.h>
 #include "ts.h"
 #include "assembleur.h"
+#include "interpreteur.h"
 void yyerror(char *s);
+
+extern FILE *yyin;
+
 
 int is_const = 0;
 
@@ -102,13 +106,25 @@ void yyerror(char *s) {
  }
 
 
-int main(void) {
+int main(int argc, char** argv) {
 
       yydebug = 1;
       initTabIns();
+      
+      if(argc != 2) { 
+            fprintf(stderr, "Usage: %s <input file>\n", argv[0]); 
+            exit(1); 
+      } 
+      FILE *f = fopen(argv[1], "r"); 
+      if(f == NULL) { 
+            fprintf(stderr, "Failed to open file \"%s\".\n", argv[1]); 
+            exit(1); 
+      } 
+      yyin = f;
       printf("Lancement parsing\n"); // yydebug=1;
       TSinit();
       yyparse();
       printTabIns();
+      interpret();
       return 0;
 }

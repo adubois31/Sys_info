@@ -6,12 +6,7 @@
 
 
 
-typedef struct{
-    char op;
-    int res;
-    int op1;
-    int op2;
-}instruction;
+
 
 int lastIns = -1;
 instruction tabIns [NUMINS];
@@ -27,6 +22,10 @@ void initTabIns(){
     for (int i=0;i<NUMINS;i++){
         tabIns[i]=insNull;
     }
+}
+
+instruction getInst(int adr){
+    return tabIns[adr];
 }
 
 int getLastInst(){
