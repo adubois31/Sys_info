@@ -40,17 +40,9 @@ end Memoire_instructions;
 
 architecture Behavioral of Memoire_instructions is
 type Memoire is array (0 to 255) of std_logic_vector (31 downto 0);
-constant mem : Memoire:=(0=>X"06010500", 1=>X"05020100", 2=>X"01000102",others=>X"00000000");
-signal clock : std_logic;
+constant mem : Memoire:=(0=>X"06010ABA",1=>X"080401BA",2=>X"0502010A",3=>X"01030201",4=>X"070504BA",others=>X"0A162636");
 
 begin
-    clock<=CLK;
-    process 
-        begin
-        wait until clock'event and clock='1';
-        Output<=mem(to_integer(unsigned(adr_inst)));
-    end process;
-        
-
-
+    Output<=mem(to_integer(unsigned(adr_inst)));
+      
 end Behavioral;
