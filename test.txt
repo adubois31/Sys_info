@@ -1,13 +1,7 @@
 main (){
-	int a=3;
-	int b=4;
-	if (a<b){
-		int p1;
-		p1=b-a;
-		printf(p1);
-
+	int a=0;
+	while(a<3){
+		printf(1);
 	}
-	else {
-		b=b+1;
-	}
+	printf(2);
 }

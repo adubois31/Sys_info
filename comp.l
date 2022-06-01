@@ -20,7 +20,7 @@ int {return tINT;}
 "while" {return tWHILE;}
 [a-zA-Z][a-zA-Z0-9_]* {
         // TODO: limite 16
-        strcpy(yylval.var,yytext);
+        yylval.var=strdup(yytext);
         return tVARNAME;}
 "="	{ return tEGAL; }
 "-"	{ return tSOU; }
@@ -42,6 +42,6 @@ int {return tINT;}
 "\n" {}
 ";" { return tSC; }
 [0-9]+(e[0-9]*)? { 
-        yylval.nb = atoi(yytext);
+        yylval.nb = atoi(strdup(yytext));
         return tNB; }
 . {return tERROR; }
