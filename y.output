@@ -13,10 +13,11 @@ Terminaux inutilisés dans la grammaire
 
 Règles inutiles dans la grammaire
 
-   42 Var: tVARNAME
-   43    | tVARNAME tCOMA Var
+   43 Var: tVARNAME
+   44    | tVARNAME tCOMA Var
 
 
+État 48 conflits: 5 réduction/réduction
 État 80 conflits: 8 décalage/réduction
 État 81 conflits: 8 décalage/réduction
 État 82 conflits: 8 décalage/réduction
@@ -62,33 +63,34 @@ Grammaire
    20     | Expr tSOU Expr
    21     | Expr tMUL Expr
    22     | Expr tDIV Expr
-   23     | Terme
+   23     | Condition
+   24     | Terme
 
-   24 Terme: tNB
-   25      | tVARNAME
+   25 Terme: tNB
+   26      | tVARNAME
 
-   26 Print: tPRINT tPO Terme tPF tSC
+   27 Print: tPRINT tPO Terme tPF tSC
 
-   27 $@3: %empty
+   28 $@3: %empty
 
-   28 $@4: %empty
+   29 $@4: %empty
 
-   29 While: tWHILE $@3 tPO Condition $@4 tPF Body
+   30 While: tWHILE $@3 tPO Condition $@4 tPF Body
 
-   30 $@5: %empty
+   31 $@5: %empty
 
-   31 If: tIF tPO Condition $@5 tPF Body
+   32 If: tIF tPO Condition $@5 tPF Body
 
-   32 Condition: Condition tSUPEQ Condition
-   33          | Condition tSUP Condition
-   34          | Condition tINFEQ Condition
-   35          | Condition tINF Condition
-   36          | Condition tEQUAL Condition
-   37          | Condition tDIFF Condition
-   38          | Condition tOR Condition
-   39          | Condition tAND Condition
-   40          | tNOT tPO Condition tPF
-   41          | Terme
+   33 Condition: Condition tSUPEQ Condition
+   34          | Condition tSUP Condition
+   35          | Condition tINFEQ Condition
+   36          | Condition tINF Condition
+   37          | Condition tEQUAL Condition
+   38          | Condition tDIFF Condition
+   39          | Condition tOR Condition
+   40          | Condition tAND Condition
+   41          | tNOT tPO Condition tPF
+   42          | Terme
 
 
 Terminaux, suivis des règles où ils apparaissent
@@ -96,8 +98,8 @@ Terminaux, suivis des règles où ils apparaissent
     $end (0) 0
     error (256)
     tMAIN (258) 1 2
-    tPO (259) 1 2 26 29 31 40
-    tPF (260) 1 2 26 29 31 40
+    tPO (259) 1 2 27 30 32 41
+    tPF (260) 1 2 27 30 32 41
     tAO (261) 4
     tAF (262) 4
     tCONST (263) 16
@@ -107,25 +109,25 @@ Terminaux, suivis des règles où ils apparaissent
     tADD (267) 19
     tMUL (268) 21
     tDIV (269) 22
-    tNOT (270) 40
-    tSUP (271) 33
-    tINF (272) 35
-    tEQUAL (273) 36
-    tDIFF (274) 37
-    tSUPEQ (275) 32
-    tINFEQ (276) 34
-    tOR (277) 38
-    tAND (278) 39
+    tNOT (270) 41
+    tSUP (271) 34
+    tINF (272) 36
+    tEQUAL (273) 37
+    tDIFF (274) 38
+    tSUPEQ (275) 33
+    tINFEQ (276) 35
+    tOR (277) 39
+    tAND (278) 40
     tCOMA (279)
-    tSC (280) 11 12 13 14 18 26
-    tPRINT (281) 26
+    tSC (280) 11 12 13 14 18 27
+    tPRINT (281) 27
     tBLANK (282)
     tERROR (283)
     tELSE (284)
-    tVARNAME <var> (285) 17 18 25
-    tNB <nb> (286) 24
-    tWHILE <nb> (287) 29
-    tIF <nb> (288) 31
+    tVARNAME <var> (285) 17 18 26
+    tNB <nb> (286) 25
+    tWHILE <nb> (287) 30
+    tIF <nb> (288) 32
 
 
 Non-terminaux, suivis des règles où ils apparaissent
@@ -137,7 +139,7 @@ Non-terminaux, suivis des règles où ils apparaissent
         à droite: 0
     Body (36)
         à gauche: 4
-        à droite: 1 2 29 31
+        à droite: 1 2 30 32
     $@1 (37)
         à gauche: 3
         à droite: 4
@@ -160,32 +162,32 @@ Non-terminaux, suivis des règles où ils apparaissent
         à gauche: 18
         à droite: 6
     Expr <nb> (44)
-        à gauche: 19 20 21 22 23
+        à gauche: 19 20 21 22 23 24
         à droite: 13 14 18 19 20 21 22
     Terme <nb> (45)
-        à gauche: 24 25
-        à droite: 23 26 41
+        à gauche: 25 26
+        à droite: 24 27 42
     Print (46)
-        à gauche: 26
+        à gauche: 27
         à droite: 7
     While (47)
-        à gauche: 29
+        à gauche: 30
         à droite: 9
     $@3 (48)
-        à gauche: 27
-        à droite: 29
-    $@4 (49)
         à gauche: 28
-        à droite: 29
+        à droite: 30
+    $@4 (49)
+        à gauche: 29
+        à droite: 30
     If (50)
-        à gauche: 31
+        à gauche: 32
         à droite: 8
     $@5 (51)
-        à gauche: 30
-        à droite: 31
+        à gauche: 31
+        à droite: 32
     Condition <nb> (52)
-        à gauche: 32 33 34 35 36 37 38 39 40 41
-        à droite: 29 31 32 33 34 35 36 37 38 39 40
+        à gauche: 33 34 35 36 37 38 39 40 41 42
+        à droite: 23 30 32 33 34 35 36 37 38 39 40 41
 
 
 État 0
@@ -326,7 +328,7 @@ Non-terminaux, suivis des règles où ils apparaissent
 
 État 15
 
-   26 Print: tPRINT . tPO Terme tPF tSC
+   27 Print: tPRINT . tPO Terme tPF tSC
 
     tPO  décalage et aller à l'état 28
 
@@ -340,16 +342,16 @@ Non-terminaux, suivis des règles où ils apparaissent
 
 État 17
 
-   29 While: tWHILE . $@3 tPO Condition $@4 tPF Body
+   30 While: tWHILE . $@3 tPO Condition $@4 tPF Body
 
-    $défaut  réduction par utilisation de la règle 27 ($@3)
+    $défaut  réduction par utilisation de la règle 28 ($@3)
 
     $@3  aller à l'état 30
 
 
 État 18
 
-   31 If: tIF . tPO Condition $@5 tPF Body
+   32 If: tIF . tPO Condition $@5 tPF Body
 
     tPO  décalage et aller à l'état 31
 
@@ -505,7 +507,7 @@ Non-terminaux, suivis des règles où ils apparaissent
 
 État 28
 
-   26 Print: tPRINT tPO . Terme tPF tSC
+   27 Print: tPRINT tPO . Terme tPF tSC
 
     tVARNAME  décalage et aller à l'état 43
     tNB       décalage et aller à l'état 44
@@ -517,30 +519,32 @@ Non-terminaux, suivis des règles où ils apparaissent
 
    18 Operation: tVARNAME tEGAL . Expr tSC
 
+    tNOT      décalage et aller à l'état 46
     tVARNAME  décalage et aller à l'état 43
     tNB       décalage et aller à l'état 44
 
-    Expr   aller à l'état 46
-    Terme  aller à l'état 47
+    Expr       aller à l'état 47
+    Terme      aller à l'état 48
+    Condition  aller à l'état 49
 
 
 État 30
 
-   29 While: tWHILE $@3 . tPO Condition $@4 tPF Body
+   30 While: tWHILE $@3 . tPO Condition $@4 tPF Body
 
-    tPO  décalage et aller à l'état 48
+    tPO  décalage et aller à l'état 50
 
 
 État 31
 
-   31 If: tIF tPO . Condition $@5 tPF Body
+   32 If: tIF tPO . Condition $@5 tPF Body
 
-    tNOT      décalage et aller à l'état 49
+    tNOT      décalage et aller à l'état 46
     tVARNAME  décalage et aller à l'état 43
     tNB       décalage et aller à l'état 44
 
-    Terme      aller à l'état 50
-    Condition  aller à l'état 51
+    Terme      aller à l'état 51
+    Condition  aller à l'état 52
 
 
 État 32
@@ -561,11 +565,13 @@ Non-terminaux, suivis des règles où ils apparaissent
 
    13 Declaration: Const tEGAL . Expr tSC
 
+    tNOT      décalage et aller à l'état 46
     tVARNAME  décalage et aller à l'état 43
     tNB       décalage et aller à l'état 44
 
-    Expr   aller à l'état 52
-    Terme  aller à l'état 47
+    Expr       aller à l'état 53
+    Terme      aller à l'état 48
+    Condition  aller à l'état 49
 
 
 État 35
@@ -579,11 +585,13 @@ Non-terminaux, suivis des règles où ils apparaissent
 
    14 Declaration: VarInt tEGAL . Expr tSC
 
+    tNOT      décalage et aller à l'état 46
     tVARNAME  décalage et aller à l'état 43
     tNB       décalage et aller à l'état 44
 
-    Expr   aller à l'état 53
-    Terme  aller à l'état 47
+    Expr       aller à l'état 54
+    Terme      aller à l'état 48
+    Condition  aller à l'état 49
 
 
 État 37
@@ -630,26 +638,33 @@ Non-terminaux, suivis des règles où ils apparaissent
 
 État 43
 
-   25 Terme: tVARNAME .
+   26 Terme: tVARNAME .
 
-    $défaut  réduction par utilisation de la règle 25 (Terme)
+    $défaut  réduction par utilisation de la règle 26 (Terme)
 
 
 État 44
 
-   24 Terme: tNB .
+   25 Terme: tNB .
 
-    $défaut  réduction par utilisation de la règle 24 (Terme)
+    $défaut  réduction par utilisation de la règle 25 (Terme)
 
 
 État 45
 
-   26 Print: tPRINT tPO Terme . tPF tSC
+   27 Print: tPRINT tPO Terme . tPF tSC
 
-    tPF  décalage et aller à l'état 54
+    tPF  décalage et aller à l'état 55
 
 
 État 46
+
+   41 Condition: tNOT . tPO Condition tPF
+
+    tPO  décalage et aller à l'état 56
+
+
+État 47
 
    18 Operation: tVARNAME tEGAL Expr . tSC
    19 Expr: Expr . tADD Expr
@@ -657,57 +672,42 @@ Non-terminaux, suivis des règles où ils apparaissent
    21     | Expr . tMUL Expr
    22     | Expr . tDIV Expr
 
-    tSOU  décalage et aller à l'état 55
-    tADD  décalage et aller à l'état 56
-    tMUL  décalage et aller à l'état 57
-    tDIV  décalage et aller à l'état 58
-    tSC   décalage et aller à l'état 59
-
-
-État 47
-
-   23 Expr: Terme .
-
-    $défaut  réduction par utilisation de la règle 23 (Expr)
+    tSOU  décalage et aller à l'état 57
+    tADD  décalage et aller à l'état 58
+    tMUL  décalage et aller à l'état 59
+    tDIV  décalage et aller à l'état 60
+    tSC   décalage et aller à l'état 61
 
 
 État 48
 
-   29 While: tWHILE $@3 tPO . Condition $@4 tPF Body
+   24 Expr: Terme .
+   42 Condition: Terme .
 
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 60
+    tSOU      réduction par utilisation de la règle 24 (Expr)
+    tSOU      [réduction par utilisation de la règle 42 (Condition)]
+    tADD      réduction par utilisation de la règle 24 (Expr)
+    tADD      [réduction par utilisation de la règle 42 (Condition)]
+    tMUL      réduction par utilisation de la règle 24 (Expr)
+    tMUL      [réduction par utilisation de la règle 42 (Condition)]
+    tDIV      réduction par utilisation de la règle 24 (Expr)
+    tDIV      [réduction par utilisation de la règle 42 (Condition)]
+    tSC       réduction par utilisation de la règle 24 (Expr)
+    tSC       [réduction par utilisation de la règle 42 (Condition)]
+    $défaut  réduction par utilisation de la règle 42 (Condition)
 
 
 État 49
 
-   40 Condition: tNOT . tPO Condition tPF
-
-    tPO  décalage et aller à l'état 61
-
-
-État 50
-
-   41 Condition: Terme .
-
-    $défaut  réduction par utilisation de la règle 41 (Condition)
-
-
-État 51
-
-   31 If: tIF tPO Condition . $@5 tPF Body
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
+   23 Expr: Condition .
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
 
     tSUP    décalage et aller à l'état 62
     tINF    décalage et aller à l'état 63
@@ -718,12 +718,55 @@ Non-terminaux, suivis des règles où ils apparaissent
     tOR     décalage et aller à l'état 68
     tAND    décalage et aller à l'état 69
 
-    $défaut  réduction par utilisation de la règle 30 ($@5)
+    $défaut  réduction par utilisation de la règle 23 (Expr)
 
-    $@5  aller à l'état 70
+
+État 50
+
+   30 While: tWHILE $@3 tPO . Condition $@4 tPF Body
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 70
+
+
+État 51
+
+   42 Condition: Terme .
+
+    $défaut  réduction par utilisation de la règle 42 (Condition)
 
 
 État 52
+
+   32 If: tIF tPO Condition . $@5 tPF Body
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
+
+    tSUP    décalage et aller à l'état 62
+    tINF    décalage et aller à l'état 63
+    tEQUAL  décalage et aller à l'état 64
+    tDIFF   décalage et aller à l'état 65
+    tSUPEQ  décalage et aller à l'état 66
+    tINFEQ  décalage et aller à l'état 67
+    tOR     décalage et aller à l'état 68
+    tAND    décalage et aller à l'état 69
+
+    $défaut  réduction par utilisation de la règle 31 ($@5)
+
+    $@5  aller à l'état 71
+
+
+État 53
 
    13 Declaration: Const tEGAL Expr . tSC
    19 Expr: Expr . tADD Expr
@@ -731,14 +774,14 @@ Non-terminaux, suivis des règles où ils apparaissent
    21     | Expr . tMUL Expr
    22     | Expr . tDIV Expr
 
-    tSOU  décalage et aller à l'état 55
-    tADD  décalage et aller à l'état 56
-    tMUL  décalage et aller à l'état 57
-    tDIV  décalage et aller à l'état 58
-    tSC   décalage et aller à l'état 71
+    tSOU  décalage et aller à l'état 57
+    tADD  décalage et aller à l'état 58
+    tMUL  décalage et aller à l'état 59
+    tDIV  décalage et aller à l'état 60
+    tSC   décalage et aller à l'état 72
 
 
-État 53
+État 54
 
    14 Declaration: VarInt tEGAL Expr . tSC
    19 Expr: Expr . tADD Expr
@@ -746,82 +789,198 @@ Non-terminaux, suivis des règles où ils apparaissent
    21     | Expr . tMUL Expr
    22     | Expr . tDIV Expr
 
-    tSOU  décalage et aller à l'état 55
-    tADD  décalage et aller à l'état 56
-    tMUL  décalage et aller à l'état 57
-    tDIV  décalage et aller à l'état 58
-    tSC   décalage et aller à l'état 72
-
-
-État 54
-
-   26 Print: tPRINT tPO Terme tPF . tSC
-
-    tSC  décalage et aller à l'état 73
+    tSOU  décalage et aller à l'état 57
+    tADD  décalage et aller à l'état 58
+    tMUL  décalage et aller à l'état 59
+    tDIV  décalage et aller à l'état 60
+    tSC   décalage et aller à l'état 73
 
 
 État 55
 
-   20 Expr: Expr tSOU . Expr
+   27 Print: tPRINT tPO Terme tPF . tSC
 
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Expr   aller à l'état 74
-    Terme  aller à l'état 47
+    tSC  décalage et aller à l'état 74
 
 
 État 56
 
-   19 Expr: Expr tADD . Expr
+   41 Condition: tNOT tPO . Condition tPF
 
+    tNOT      décalage et aller à l'état 46
     tVARNAME  décalage et aller à l'état 43
     tNB       décalage et aller à l'état 44
 
-    Expr   aller à l'état 75
-    Terme  aller à l'état 47
+    Terme      aller à l'état 51
+    Condition  aller à l'état 75
 
 
 État 57
 
-   21 Expr: Expr tMUL . Expr
+   20 Expr: Expr tSOU . Expr
 
+    tNOT      décalage et aller à l'état 46
     tVARNAME  décalage et aller à l'état 43
     tNB       décalage et aller à l'état 44
 
-    Expr   aller à l'état 76
-    Terme  aller à l'état 47
+    Expr       aller à l'état 76
+    Terme      aller à l'état 48
+    Condition  aller à l'état 49
 
 
 État 58
 
-   22 Expr: Expr tDIV . Expr
+   19 Expr: Expr tADD . Expr
 
+    tNOT      décalage et aller à l'état 46
     tVARNAME  décalage et aller à l'état 43
     tNB       décalage et aller à l'état 44
 
-    Expr   aller à l'état 77
-    Terme  aller à l'état 47
+    Expr       aller à l'état 77
+    Terme      aller à l'état 48
+    Condition  aller à l'état 49
 
 
 État 59
+
+   21 Expr: Expr tMUL . Expr
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Expr       aller à l'état 78
+    Terme      aller à l'état 48
+    Condition  aller à l'état 49
+
+
+État 60
+
+   22 Expr: Expr tDIV . Expr
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Expr       aller à l'état 79
+    Terme      aller à l'état 48
+    Condition  aller à l'état 49
+
+
+État 61
 
    18 Operation: tVARNAME tEGAL Expr tSC .
 
     $défaut  réduction par utilisation de la règle 18 (Operation)
 
 
-État 60
+État 62
 
-   29 While: tWHILE $@3 tPO Condition . $@4 tPF Body
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
+   34 Condition: Condition tSUP . Condition
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 80
+
+
+État 63
+
+   36 Condition: Condition tINF . Condition
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 81
+
+
+État 64
+
+   37 Condition: Condition tEQUAL . Condition
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 82
+
+
+État 65
+
+   38 Condition: Condition tDIFF . Condition
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 83
+
+
+État 66
+
+   33 Condition: Condition tSUPEQ . Condition
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 84
+
+
+État 67
+
+   35 Condition: Condition tINFEQ . Condition
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 85
+
+
+État 68
+
+   39 Condition: Condition tOR . Condition
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 86
+
+
+État 69
+
+   40 Condition: Condition tAND . Condition
+
+    tNOT      décalage et aller à l'état 46
+    tVARNAME  décalage et aller à l'état 43
+    tNB       décalage et aller à l'état 44
+
+    Terme      aller à l'état 51
+    Condition  aller à l'état 87
+
+
+État 70
+
+   30 While: tWHILE $@3 tPO Condition . $@4 tPF Body
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
 
     tSUP    décalage et aller à l'état 62
     tINF    décalage et aller à l'état 63
@@ -832,215 +991,50 @@ Non-terminaux, suivis des règles où ils apparaissent
     tOR     décalage et aller à l'état 68
     tAND    décalage et aller à l'état 69
 
-    $défaut  réduction par utilisation de la règle 28 ($@4)
+    $défaut  réduction par utilisation de la règle 29 ($@4)
 
-    $@4  aller à l'état 78
-
-
-État 61
-
-   40 Condition: tNOT tPO . Condition tPF
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 79
-
-
-État 62
-
-   33 Condition: Condition tSUP . Condition
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 80
-
-
-État 63
-
-   35 Condition: Condition tINF . Condition
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 81
-
-
-État 64
-
-   36 Condition: Condition tEQUAL . Condition
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 82
-
-
-État 65
-
-   37 Condition: Condition tDIFF . Condition
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 83
-
-
-État 66
-
-   32 Condition: Condition tSUPEQ . Condition
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 84
-
-
-État 67
-
-   34 Condition: Condition tINFEQ . Condition
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 85
-
-
-État 68
-
-   38 Condition: Condition tOR . Condition
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 86
-
-
-État 69
-
-   39 Condition: Condition tAND . Condition
-
-    tNOT      décalage et aller à l'état 49
-    tVARNAME  décalage et aller à l'état 43
-    tNB       décalage et aller à l'état 44
-
-    Terme      aller à l'état 50
-    Condition  aller à l'état 87
-
-
-État 70
-
-   31 If: tIF tPO Condition $@5 . tPF Body
-
-    tPF  décalage et aller à l'état 88
+    $@4  aller à l'état 88
 
 
 État 71
+
+   32 If: tIF tPO Condition $@5 . tPF Body
+
+    tPF  décalage et aller à l'état 89
+
+
+État 72
 
    13 Declaration: Const tEGAL Expr tSC .
 
     $défaut  réduction par utilisation de la règle 13 (Declaration)
 
 
-État 72
+État 73
 
    14 Declaration: VarInt tEGAL Expr tSC .
 
     $défaut  réduction par utilisation de la règle 14 (Declaration)
 
 
-État 73
-
-   26 Print: tPRINT tPO Terme tPF tSC .
-
-    $défaut  réduction par utilisation de la règle 26 (Print)
-
-
 État 74
 
-   19 Expr: Expr . tADD Expr
-   20     | Expr . tSOU Expr
-   20     | Expr tSOU Expr .
-   21     | Expr . tMUL Expr
-   22     | Expr . tDIV Expr
+   27 Print: tPRINT tPO Terme tPF tSC .
 
-    tMUL  décalage et aller à l'état 57
-    tDIV  décalage et aller à l'état 58
-
-    $défaut  réduction par utilisation de la règle 20 (Expr)
+    $défaut  réduction par utilisation de la règle 27 (Print)
 
 
 État 75
 
-   19 Expr: Expr . tADD Expr
-   19     | Expr tADD Expr .
-   20     | Expr . tSOU Expr
-   21     | Expr . tMUL Expr
-   22     | Expr . tDIV Expr
-
-    tMUL  décalage et aller à l'état 57
-    tDIV  décalage et aller à l'état 58
-
-    $défaut  réduction par utilisation de la règle 19 (Expr)
-
-
-État 76
-
-   19 Expr: Expr . tADD Expr
-   20     | Expr . tSOU Expr
-   21     | Expr . tMUL Expr
-   21     | Expr tMUL Expr .
-   22     | Expr . tDIV Expr
-
-    $défaut  réduction par utilisation de la règle 21 (Expr)
-
-
-État 77
-
-   19 Expr: Expr . tADD Expr
-   20     | Expr . tSOU Expr
-   21     | Expr . tMUL Expr
-   22     | Expr . tDIV Expr
-   22     | Expr tDIV Expr .
-
-    $défaut  réduction par utilisation de la règle 22 (Expr)
-
-
-État 78
-
-   29 While: tWHILE $@3 tPO Condition $@4 . tPF Body
-
-    tPF  décalage et aller à l'état 89
-
-
-État 79
-
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
-   40          | tNOT tPO Condition . tPF
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
+   41          | tNOT tPO Condition . tPF
 
     tPF     décalage et aller à l'état 90
     tSUP    décalage et aller à l'état 62
@@ -1053,177 +1047,67 @@ Non-terminaux, suivis des règles où ils apparaissent
     tAND    décalage et aller à l'état 69
 
 
+État 76
+
+   19 Expr: Expr . tADD Expr
+   20     | Expr . tSOU Expr
+   20     | Expr tSOU Expr .
+   21     | Expr . tMUL Expr
+   22     | Expr . tDIV Expr
+
+    tMUL  décalage et aller à l'état 59
+    tDIV  décalage et aller à l'état 60
+
+    $défaut  réduction par utilisation de la règle 20 (Expr)
+
+
+État 77
+
+   19 Expr: Expr . tADD Expr
+   19     | Expr tADD Expr .
+   20     | Expr . tSOU Expr
+   21     | Expr . tMUL Expr
+   22     | Expr . tDIV Expr
+
+    tMUL  décalage et aller à l'état 59
+    tDIV  décalage et aller à l'état 60
+
+    $défaut  réduction par utilisation de la règle 19 (Expr)
+
+
+État 78
+
+   19 Expr: Expr . tADD Expr
+   20     | Expr . tSOU Expr
+   21     | Expr . tMUL Expr
+   21     | Expr tMUL Expr .
+   22     | Expr . tDIV Expr
+
+    $défaut  réduction par utilisation de la règle 21 (Expr)
+
+
+État 79
+
+   19 Expr: Expr . tADD Expr
+   20     | Expr . tSOU Expr
+   21     | Expr . tMUL Expr
+   22     | Expr . tDIV Expr
+   22     | Expr tDIV Expr .
+
+    $défaut  réduction par utilisation de la règle 22 (Expr)
+
+
 État 80
 
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   33          | Condition tSUP Condition .
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
-
-    tSUP    décalage et aller à l'état 62
-    tINF    décalage et aller à l'état 63
-    tEQUAL  décalage et aller à l'état 64
-    tDIFF   décalage et aller à l'état 65
-    tSUPEQ  décalage et aller à l'état 66
-    tINFEQ  décalage et aller à l'état 67
-    tOR     décalage et aller à l'état 68
-    tAND    décalage et aller à l'état 69
-
-    tSUP      [réduction par utilisation de la règle 33 (Condition)]
-    tINF      [réduction par utilisation de la règle 33 (Condition)]
-    tEQUAL    [réduction par utilisation de la règle 33 (Condition)]
-    tDIFF     [réduction par utilisation de la règle 33 (Condition)]
-    tSUPEQ    [réduction par utilisation de la règle 33 (Condition)]
-    tINFEQ    [réduction par utilisation de la règle 33 (Condition)]
-    tOR       [réduction par utilisation de la règle 33 (Condition)]
-    tAND      [réduction par utilisation de la règle 33 (Condition)]
-    $défaut  réduction par utilisation de la règle 33 (Condition)
-
-
-État 81
-
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   35          | Condition tINF Condition .
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
-
-    tSUP    décalage et aller à l'état 62
-    tINF    décalage et aller à l'état 63
-    tEQUAL  décalage et aller à l'état 64
-    tDIFF   décalage et aller à l'état 65
-    tSUPEQ  décalage et aller à l'état 66
-    tINFEQ  décalage et aller à l'état 67
-    tOR     décalage et aller à l'état 68
-    tAND    décalage et aller à l'état 69
-
-    tSUP      [réduction par utilisation de la règle 35 (Condition)]
-    tINF      [réduction par utilisation de la règle 35 (Condition)]
-    tEQUAL    [réduction par utilisation de la règle 35 (Condition)]
-    tDIFF     [réduction par utilisation de la règle 35 (Condition)]
-    tSUPEQ    [réduction par utilisation de la règle 35 (Condition)]
-    tINFEQ    [réduction par utilisation de la règle 35 (Condition)]
-    tOR       [réduction par utilisation de la règle 35 (Condition)]
-    tAND      [réduction par utilisation de la règle 35 (Condition)]
-    $défaut  réduction par utilisation de la règle 35 (Condition)
-
-
-État 82
-
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   36          | Condition tEQUAL Condition .
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
-
-    tSUP    décalage et aller à l'état 62
-    tINF    décalage et aller à l'état 63
-    tEQUAL  décalage et aller à l'état 64
-    tDIFF   décalage et aller à l'état 65
-    tSUPEQ  décalage et aller à l'état 66
-    tINFEQ  décalage et aller à l'état 67
-    tOR     décalage et aller à l'état 68
-    tAND    décalage et aller à l'état 69
-
-    tSUP      [réduction par utilisation de la règle 36 (Condition)]
-    tINF      [réduction par utilisation de la règle 36 (Condition)]
-    tEQUAL    [réduction par utilisation de la règle 36 (Condition)]
-    tDIFF     [réduction par utilisation de la règle 36 (Condition)]
-    tSUPEQ    [réduction par utilisation de la règle 36 (Condition)]
-    tINFEQ    [réduction par utilisation de la règle 36 (Condition)]
-    tOR       [réduction par utilisation de la règle 36 (Condition)]
-    tAND      [réduction par utilisation de la règle 36 (Condition)]
-    $défaut  réduction par utilisation de la règle 36 (Condition)
-
-
-État 83
-
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   37          | Condition tDIFF Condition .
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
-
-    tSUP    décalage et aller à l'état 62
-    tINF    décalage et aller à l'état 63
-    tEQUAL  décalage et aller à l'état 64
-    tDIFF   décalage et aller à l'état 65
-    tSUPEQ  décalage et aller à l'état 66
-    tINFEQ  décalage et aller à l'état 67
-    tOR     décalage et aller à l'état 68
-    tAND    décalage et aller à l'état 69
-
-    tSUP      [réduction par utilisation de la règle 37 (Condition)]
-    tINF      [réduction par utilisation de la règle 37 (Condition)]
-    tEQUAL    [réduction par utilisation de la règle 37 (Condition)]
-    tDIFF     [réduction par utilisation de la règle 37 (Condition)]
-    tSUPEQ    [réduction par utilisation de la règle 37 (Condition)]
-    tINFEQ    [réduction par utilisation de la règle 37 (Condition)]
-    tOR       [réduction par utilisation de la règle 37 (Condition)]
-    tAND      [réduction par utilisation de la règle 37 (Condition)]
-    $défaut  réduction par utilisation de la règle 37 (Condition)
-
-
-État 84
-
-   32 Condition: Condition . tSUPEQ Condition
-   32          | Condition tSUPEQ Condition .
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
-
-    tSUP    décalage et aller à l'état 62
-    tINF    décalage et aller à l'état 63
-    tEQUAL  décalage et aller à l'état 64
-    tDIFF   décalage et aller à l'état 65
-    tSUPEQ  décalage et aller à l'état 66
-    tINFEQ  décalage et aller à l'état 67
-    tOR     décalage et aller à l'état 68
-    tAND    décalage et aller à l'état 69
-
-    tSUP      [réduction par utilisation de la règle 32 (Condition)]
-    tINF      [réduction par utilisation de la règle 32 (Condition)]
-    tEQUAL    [réduction par utilisation de la règle 32 (Condition)]
-    tDIFF     [réduction par utilisation de la règle 32 (Condition)]
-    tSUPEQ    [réduction par utilisation de la règle 32 (Condition)]
-    tINFEQ    [réduction par utilisation de la règle 32 (Condition)]
-    tOR       [réduction par utilisation de la règle 32 (Condition)]
-    tAND      [réduction par utilisation de la règle 32 (Condition)]
-    $défaut  réduction par utilisation de la règle 32 (Condition)
-
-
-État 85
-
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   34          | Condition tINFEQ Condition .
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   34          | Condition tSUP Condition .
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
 
     tSUP    décalage et aller à l'état 62
     tINF    décalage et aller à l'état 63
@@ -1245,17 +1129,81 @@ Non-terminaux, suivis des règles où ils apparaissent
     $défaut  réduction par utilisation de la règle 34 (Condition)
 
 
-État 86
+État 81
 
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   38          | Condition tOR Condition .
-   39          | Condition . tAND Condition
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   36          | Condition tINF Condition .
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
+
+    tSUP    décalage et aller à l'état 62
+    tINF    décalage et aller à l'état 63
+    tEQUAL  décalage et aller à l'état 64
+    tDIFF   décalage et aller à l'état 65
+    tSUPEQ  décalage et aller à l'état 66
+    tINFEQ  décalage et aller à l'état 67
+    tOR     décalage et aller à l'état 68
+    tAND    décalage et aller à l'état 69
+
+    tSUP      [réduction par utilisation de la règle 36 (Condition)]
+    tINF      [réduction par utilisation de la règle 36 (Condition)]
+    tEQUAL    [réduction par utilisation de la règle 36 (Condition)]
+    tDIFF     [réduction par utilisation de la règle 36 (Condition)]
+    tSUPEQ    [réduction par utilisation de la règle 36 (Condition)]
+    tINFEQ    [réduction par utilisation de la règle 36 (Condition)]
+    tOR       [réduction par utilisation de la règle 36 (Condition)]
+    tAND      [réduction par utilisation de la règle 36 (Condition)]
+    $défaut  réduction par utilisation de la règle 36 (Condition)
+
+
+État 82
+
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   37          | Condition tEQUAL Condition .
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
+
+    tSUP    décalage et aller à l'état 62
+    tINF    décalage et aller à l'état 63
+    tEQUAL  décalage et aller à l'état 64
+    tDIFF   décalage et aller à l'état 65
+    tSUPEQ  décalage et aller à l'état 66
+    tINFEQ  décalage et aller à l'état 67
+    tOR     décalage et aller à l'état 68
+    tAND    décalage et aller à l'état 69
+
+    tSUP      [réduction par utilisation de la règle 37 (Condition)]
+    tINF      [réduction par utilisation de la règle 37 (Condition)]
+    tEQUAL    [réduction par utilisation de la règle 37 (Condition)]
+    tDIFF     [réduction par utilisation de la règle 37 (Condition)]
+    tSUPEQ    [réduction par utilisation de la règle 37 (Condition)]
+    tINFEQ    [réduction par utilisation de la règle 37 (Condition)]
+    tOR       [réduction par utilisation de la règle 37 (Condition)]
+    tAND      [réduction par utilisation de la règle 37 (Condition)]
+    $défaut  réduction par utilisation de la règle 37 (Condition)
+
+
+État 83
+
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   38          | Condition tDIFF Condition .
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
 
     tSUP    décalage et aller à l'état 62
     tINF    décalage et aller à l'état 63
@@ -1277,17 +1225,81 @@ Non-terminaux, suivis des règles où ils apparaissent
     $défaut  réduction par utilisation de la règle 38 (Condition)
 
 
-État 87
+État 84
 
-   32 Condition: Condition . tSUPEQ Condition
-   33          | Condition . tSUP Condition
-   34          | Condition . tINFEQ Condition
-   35          | Condition . tINF Condition
-   36          | Condition . tEQUAL Condition
-   37          | Condition . tDIFF Condition
-   38          | Condition . tOR Condition
-   39          | Condition . tAND Condition
-   39          | Condition tAND Condition .
+   33 Condition: Condition . tSUPEQ Condition
+   33          | Condition tSUPEQ Condition .
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
+
+    tSUP    décalage et aller à l'état 62
+    tINF    décalage et aller à l'état 63
+    tEQUAL  décalage et aller à l'état 64
+    tDIFF   décalage et aller à l'état 65
+    tSUPEQ  décalage et aller à l'état 66
+    tINFEQ  décalage et aller à l'état 67
+    tOR     décalage et aller à l'état 68
+    tAND    décalage et aller à l'état 69
+
+    tSUP      [réduction par utilisation de la règle 33 (Condition)]
+    tINF      [réduction par utilisation de la règle 33 (Condition)]
+    tEQUAL    [réduction par utilisation de la règle 33 (Condition)]
+    tDIFF     [réduction par utilisation de la règle 33 (Condition)]
+    tSUPEQ    [réduction par utilisation de la règle 33 (Condition)]
+    tINFEQ    [réduction par utilisation de la règle 33 (Condition)]
+    tOR       [réduction par utilisation de la règle 33 (Condition)]
+    tAND      [réduction par utilisation de la règle 33 (Condition)]
+    $défaut  réduction par utilisation de la règle 33 (Condition)
+
+
+État 85
+
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   35          | Condition tINFEQ Condition .
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
+
+    tSUP    décalage et aller à l'état 62
+    tINF    décalage et aller à l'état 63
+    tEQUAL  décalage et aller à l'état 64
+    tDIFF   décalage et aller à l'état 65
+    tSUPEQ  décalage et aller à l'état 66
+    tINFEQ  décalage et aller à l'état 67
+    tOR     décalage et aller à l'état 68
+    tAND    décalage et aller à l'état 69
+
+    tSUP      [réduction par utilisation de la règle 35 (Condition)]
+    tINF      [réduction par utilisation de la règle 35 (Condition)]
+    tEQUAL    [réduction par utilisation de la règle 35 (Condition)]
+    tDIFF     [réduction par utilisation de la règle 35 (Condition)]
+    tSUPEQ    [réduction par utilisation de la règle 35 (Condition)]
+    tINFEQ    [réduction par utilisation de la règle 35 (Condition)]
+    tOR       [réduction par utilisation de la règle 35 (Condition)]
+    tAND      [réduction par utilisation de la règle 35 (Condition)]
+    $défaut  réduction par utilisation de la règle 35 (Condition)
+
+
+État 86
+
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   39          | Condition tOR Condition .
+   40          | Condition . tAND Condition
 
     tSUP    décalage et aller à l'état 62
     tINF    décalage et aller à l'état 63
@@ -1309,18 +1321,48 @@ Non-terminaux, suivis des règles où ils apparaissent
     $défaut  réduction par utilisation de la règle 39 (Condition)
 
 
+État 87
+
+   33 Condition: Condition . tSUPEQ Condition
+   34          | Condition . tSUP Condition
+   35          | Condition . tINFEQ Condition
+   36          | Condition . tINF Condition
+   37          | Condition . tEQUAL Condition
+   38          | Condition . tDIFF Condition
+   39          | Condition . tOR Condition
+   40          | Condition . tAND Condition
+   40          | Condition tAND Condition .
+
+    tSUP    décalage et aller à l'état 62
+    tINF    décalage et aller à l'état 63
+    tEQUAL  décalage et aller à l'état 64
+    tDIFF   décalage et aller à l'état 65
+    tSUPEQ  décalage et aller à l'état 66
+    tINFEQ  décalage et aller à l'état 67
+    tOR     décalage et aller à l'état 68
+    tAND    décalage et aller à l'état 69
+
+    tSUP      [réduction par utilisation de la règle 40 (Condition)]
+    tINF      [réduction par utilisation de la règle 40 (Condition)]
+    tEQUAL    [réduction par utilisation de la règle 40 (Condition)]
+    tDIFF     [réduction par utilisation de la règle 40 (Condition)]
+    tSUPEQ    [réduction par utilisation de la règle 40 (Condition)]
+    tINFEQ    [réduction par utilisation de la règle 40 (Condition)]
+    tOR       [réduction par utilisation de la règle 40 (Condition)]
+    tAND      [réduction par utilisation de la règle 40 (Condition)]
+    $défaut  réduction par utilisation de la règle 40 (Condition)
+
+
 État 88
 
-   31 If: tIF tPO Condition $@5 tPF . Body
+   30 While: tWHILE $@3 tPO Condition $@4 . tPF Body
 
-    tAO  décalage et aller à l'état 8
-
-    Body  aller à l'état 91
+    tPF  décalage et aller à l'état 91
 
 
 État 89
 
-   29 While: tWHILE $@3 tPO Condition $@4 tPF . Body
+   32 If: tIF tPO Condition $@5 tPF . Body
 
     tAO  décalage et aller à l'état 8
 
@@ -1329,20 +1371,29 @@ Non-terminaux, suivis des règles où ils apparaissent
 
 État 90
 
-   40 Condition: tNOT tPO Condition tPF .
+   41 Condition: tNOT tPO Condition tPF .
 
-    $défaut  réduction par utilisation de la règle 40 (Condition)
+    $défaut  réduction par utilisation de la règle 41 (Condition)
 
 
 État 91
 
-   31 If: tIF tPO Condition $@5 tPF Body .
+   30 While: tWHILE $@3 tPO Condition $@4 tPF . Body
 
-    $défaut  réduction par utilisation de la règle 31 (If)
+    tAO  décalage et aller à l'état 8
+
+    Body  aller à l'état 93
 
 
 État 92
 
-   29 While: tWHILE $@3 tPO Condition $@4 tPF Body .
+   32 If: tIF tPO Condition $@5 tPF Body .
 
-    $défaut  réduction par utilisation de la règle 29 (While)
+    $défaut  réduction par utilisation de la règle 32 (If)
+
+
+État 93
+
+   30 While: tWHILE $@3 tPO Condition $@4 tPF Body .
+
+    $défaut  réduction par utilisation de la règle 30 (While)

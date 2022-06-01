@@ -33,10 +33,10 @@ void interpret()
             interpreterTable[inst.res] = interpreterTable[inst.op1] + interpreterTable[inst.op2];
             break;
         case '2':
-            interpreterTable[inst.res] = interpreterTable[inst.op1] - interpreterTable[inst.op2];
+            interpreterTable[inst.res] = interpreterTable[inst.op1] * interpreterTable[inst.op2];
             break;
         case '3':
-            interpreterTable[inst.res] = interpreterTable[inst.op1] * interpreterTable[inst.op2];
+            interpreterTable[inst.res] = interpreterTable[inst.op1] - interpreterTable[inst.op2];
             break;
         case '4':
             interpreterTable[inst.res] = interpreterTable[inst.op1] / interpreterTable[inst.op2];
@@ -67,6 +67,15 @@ void interpret()
             break;
         case 'C':
             printf("%d\n", interpreterTable[inst.res]);
+            break;
+        case 'D':
+            interpreterTable[inst.res] = interpreterTable[inst.op1] || interpreterTable[inst.op2];
+            break;
+        case 'E':
+            interpreterTable[inst.res] = interpreterTable[inst.op1] && interpreterTable[inst.op2];
+            break;
+        case 'F':
+            interpreterTable[inst.res] = !interpreterTable[inst.op1];
             break;
         default:
             printf("\n");

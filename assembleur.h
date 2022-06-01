@@ -1,5 +1,5 @@
 enum operation{
-    ADD, MUL, SOU, DIV, COP , AFC, JMP, JMF, INF, SUP, EQU, PRI
+    ADD, MUL, SOU, DIV, COP , AFC, JMP, JMF, INF, SUP, EQU, PRI, OR, AND, NOT
 };
 
 typedef struct{

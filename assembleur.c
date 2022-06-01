@@ -79,6 +79,9 @@ char codeOP(enum operation op){
         case SUP:return 'A';
         case EQU:return 'B';
         case PRI:return 'C';
+        case OR:return 'D';
+        case AND: return 'E';
+        case NOT: return 'F';
     }
 }
 
@@ -95,6 +98,8 @@ void addInst3(enum operation op, int res, int op1, int op2){
         case INF:
         case SUP:
         case EQU:
+        case OR:
+        case AND:
         //printf("ON essaye d'ajouter une instruction\n");
             newIns.op=codeOP(op);
             newIns.res=res;
@@ -115,6 +120,7 @@ void addInst2(enum operation op, int res, int operande){
         case COP:
         case AFC:
         case JMF:
+        case NOT:
             newIns.op=codeOP(op);
             newIns.res=res;
             newIns.op1=operande;

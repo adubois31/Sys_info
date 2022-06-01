@@ -59,10 +59,21 @@ Operation :  tVARNAME  tEGAL Expr tSC {addInst2(COP,findAddr($1),popTemp());};
 Expr :  Expr  tADD  Expr {int addrTemp1=popTemp() ;
                         int addrTemp2=popTemp();
                         int addrTempRes = pushTemp();
-                        addInst3(ADD,addrTempRes,addrTemp1,addrTemp2);$$=$1;}
-      |Expr  tSOU  Expr {addInst3(SOU,$1,$1,$3);$$=$1;}
-      |Expr  tMUL  Expr {addInst3(MUL,$1,$1,$3);$$=$1;}  
-      |Expr  tDIV  Expr {addInst3(DIV,$1,$1,$3);$$=$1;}
+                        addInst3(ADD,addrTempRes,addrTemp1,addrTemp2);$$=addrTempRes;}
+      |Expr  tSOU  Expr {int addrTemp1=popTemp() ;
+                        int addrTemp2=popTemp();
+                        int addrTempRes = pushTemp();
+                        addInst3(SOU,addrTempRes,addrTemp2,addrTemp1);$$=addrTempRes;}
+      |Expr  tMUL  Expr {int addrTemp1=popTemp() ;
+                        int addrTemp2=popTemp();
+                        int addrTempRes = pushTemp();
+                        addInst3(MUL,addrTempRes,addrTemp2,addrTemp1);$$=addrTempRes;}  
+      |Expr  tDIV  Expr {int addrTemp1=popTemp() ;
+                        int addrTemp2=popTemp();
+                        int addrTempRes = pushTemp();
+                        addInst3(DIV,addrTempRes,addrTemp2,addrTemp1);$$=addrTempRes;}
+
+      |Condition
       |Terme {$$=$1;};
 
 Terme : tNB {int adrTemp=pushTemp();
@@ -80,19 +91,53 @@ While : tWHILE {$1=getLastInst()+1;} tPO Condition {addInst2(JMF,$4,-1);}  tPF B
 If :        tIF tPO Condition {addInst2(JMF,$3,-1);$1=getLastInst();} tPF  Body {modifyInstr($1,getLastInst()+1);};
             //|tIF tPO Condition tPF   Body  tELSE   Body;
 
-Condition :  Condition tSUPEQ Condition
-            |Condition tSUP Condition {addInst3(SUP,$1,$1,$3);$$=$1;}
-            |Condition tINFEQ Condition
+Condition :  Condition tSUPEQ Condition{int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(INF,addrTempRes,addrTemp2,addrTemp1);
+                                    addInst2(NOT,addrTempRes,addrTempRes);
+                                    $$=addrTempRes;}
+            |Condition tSUP Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(SUP,addrTempRes,addrTemp2,addrTemp1);
+                                    $$=addrTempRes;}
+            |Condition tINFEQ Condition{int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(SUP,addrTempRes,addrTemp2,addrTemp1);
+                                    addInst2(NOT,addrTempRes,addrTempRes);
+                                    $$=addrTempRes;}
             |Condition tINF Condition {int addrTemp1=popTemp() ;
                                     int addrTemp2=popTemp();
                                     int addrTempRes = pushTemp();
                                     addInst3(INF,addrTempRes,addrTemp2,addrTemp1);
                                     $$=addrTempRes;}
-            |Condition tEQUAL Condition {addInst3(EQU,$1,$1,$3);$$=$1;}
-            |Condition tDIFF Condition
-            |Condition tOR Condition
-            |Condition tAND Condition
-            |tNOT tPO Condition tPF 
+            |Condition tEQUAL Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(EQU,addrTempRes,addrTemp2,addrTemp1);
+                                    $$=addrTempRes;}
+            |Condition tDIFF Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(EQU,addrTempRes,addrTemp2,addrTemp1);
+                                    addInst2(NOT,addrTempRes,addrTempRes);
+                                    $$=addrTempRes;}
+            |Condition tOR Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(OR,addrTempRes,addrTemp2,addrTemp1);
+                                    $$=addrTempRes;}
+            |Condition tAND Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(AND,addrTempRes,addrTemp2,addrTemp1);
+                                    $$=addrTempRes;}
+            |tNOT tPO Condition tPF {int addrTemp=popTemp() ;
+                                    int addrTempRes = pushTemp();
+                                    addInst2(NOT,addrTempRes,addrTemp);
+                                    $$=addrTempRes;}
             |Terme;
             
 
