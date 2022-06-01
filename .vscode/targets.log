@@ -1,0 +1,446 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Jun  1 14:48:48 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = mate
+# environment
+OPAM_SWITCH_PREFIX = /mnt/commetud/GEI/OCaml/.opam/4.08.1
+# default
+.SHELLFLAGS := -c
+# environment
+OCAML_TOPLEVEL_PATH = /mnt/commetud/GEI/OCaml/.opam/4.08.1/lib/toplevel
+# makefile (from 'Makefile', line 8)
+OBJ = y.tab.o lex.yy.o main.o ts.o assembleur.o
+# environment
+XDG_SESSION_CLASS = user
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /home/delambre/.Xauthority
+# environment
+GDMSESSION = mate
+# environment
+XMODIFIERS = @im=ibus
+# makefile
+CURDIR := /home/delambre/Bureau/4A/Syst_Info_le_bon/Sys_info
+# makefile
+SHELL = /bin/sh
+# makefile (from 'Makefile', line 3)
+BIN = comp
+# environment
+GDM_LANG = fr_FR
+# environment
+VSCODE_NLS_CONFIG = {"locale":"fr","availableLanguages":{"*":"fr"},"_languagePackId":"25fe6a3290ec415596628d4afc87a88c.fr","_translationsConfigFile":"/home/delambre/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/tcf.json","_cacheRoot":"/home/delambre/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr","_resolvedLanguagePackCoreLocation":"/home/delambre/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5","_corruptedFile":"/home/delambre/.config/Code/clp/25fe6a3290ec415596628d4afc87a88c.fr/corrupted.info","_languagePackSupport":true}
+# environment
+_ = /usr/share/code/code
+# environment
+QT_AUTO_SCREEN_SCALE_FACTOR = 0
+# makefile (from 'Makefile', line 6)
+CFLAGS = -Wall -g
+# environment
+JOURNAL_STREAM = 8:43215
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-mate:/etc/xdg
+# environment
+GTK_OVERLAY_SCROLLING = 0
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST :=  Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+XDG_DATA_DIRS = /usr/share/mate:/usr/share/mate:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f062b62975ff2
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+QT_SCALE_FACTOR = 1
+# environment
+MANAGERPID = 1311
+# environment
+CLUTTER_IM_MODULE = ibus
+# environment
+LESSOPEN = | /usr/bin/lesspipe %s
+# environment
+VSCODE_CWD = /home/delambre
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+# environment
+KRB5CCNAME = FILE:/tmp/krb5cc_24205_pz1xn7
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /mnt/commetud/GEI/OCaml/.opam/4.08.1/bin:/mnt/commetud/GEI/OCaml/.opam/4.08.1/bin:/usr/local/insa/shared/opam/default/bin:/mnt/commetud/GEI/OCaml/.opam/4.08.1/bin:/usr/local/insa/shared/opam/default/bin:/usr/local/insa/lustre-v4-XX-0-linux64/bin:/usr/local/insa/arm-ada/compilateur/gcc-arm-none-eabi/bin:/usr/local/insa/anaconda/bin:/usr/local/insa/bin:/usr/local/insa/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/insa/tina/bin:/snap/bin
+# makefile (from 'Makefile', line 1)
+GRM = comp.y
+# environment
+GPG_AGENT_INFO = /run/user/24205/gnupg/S.gpg-agent:0:1
+# environment
+SESSION_MANAGER = local/insa-10223:@/tmp/.ICE-unix/1323,unix/insa-10223:/tmp/.ICE-unix/1323
+# environment
+XDG_RUNTIME_DIR = /run/user/24205
+# environment
+UBUNTU_MENUPROXY = 1
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ 
+ELECTRON_RUN_AS_NODE = 1
+# environment
+INVOCATION_ID = 6e9f8bc03c90405ab55426abbe3c25b6
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/delambre
+# environment
+LS_COLORS = 
+# environment
+XDG_SESSION_DESKTOP = mate
+# environment
+SSH_AUTH_SOCK = /run/user/24205/keyring/ssh
+# environment
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2529
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+GTK_IM_MODULE = ibus
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/delambre/Bureau/4A/Syst_Info_le_bon/Sys_info
+# environment
+QT_QPA_PLATFORMTHEME = gtk2
+# default
+.LOADED := 
+# environment
+XDG_SEAT = seat0
+# environment
+SSH_AGENT_PID = 1403
+# environment
+PKG_CONFIG_PATH = /usr/local/insa/shared/opam/default/lib/pkgconfig:/usr/local/insa/shared/opam/default/lib/pkgconfig:
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = MATE
+# environment
+GTK_MODULES = appmenu-gtk-module:gail:atk-bridge:canberra-gtk-module:appmenu-gtk-module
+# environment
+MANPATH = /usr/local/man:/usr/local/share/man:/usr/share/man:/opt/man:/usr/X11R6/man:$LUSTRE_INSTALL/man:/usr/local/insa/shared/opam/default/man:/mnt/commetud/GEI/OCaml/.opam/4.08.1/man:/usr/local/insa/shared/opam/default/man:/mnt/commetud/GEI/OCaml/.opam/4.08.1/man:/mnt/commetud/GEI/OCaml/.opam/4.08.1/man
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/delambre
+# environment
+LD_LIBRARY_PATH = /usr/local/insa/lib:$LD_LIBRARY_PATH
+# environment
+LESSCLOSE = /usr/bin/lesspipe %s %s
+# environment
+VSCODE_CODE_CACHE_PATH = /home/delambre/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LOGNAME = delambre
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+MAKE_VERSION := 4.2.1
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XDG_VTNR = 7
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+QT_IM_MODULE = ibus
+# environment
+SHLVL = 0
+# makefile (from 'Makefile', line 5)
+CC = gcc
+# environment
+IM_CONFIG_PHASE = 1
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/24205/vscode-ipc-ac373706-72d0-4653-ada3-78c4a260ae8f.sock
+# environment
+COMPIZ_CONFIG_PROFILE = mate
+# environment
+XDG_SESSION_ID = c2
+# environment
+USER = delambre
+# environment
+CAML_LD_LIBRARY_PATH = /mnt/commetud/GEI/OCaml/.opam/4.08.1/lib/stublibs:/mnt/commetud/GEI/OCaml/.opam/4.08.1/lib/ocaml/stublibs:/mnt/commetud/GEI/OCaml/.opam/4.08.1/lib/ocaml
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = MATE
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# environment
+R_LIBS_USER = ~/R/libs
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = fr_FR
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+VSCODE_IPC_HOOK = /run/user/24205/vscode-c5b8638e-1.67.2-main.sock
+# makefile (from 'Makefile', line 2)
+LEX = comp.l
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+GRC_XTERM_EXECUTABLE = /usr/bin/xterm
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+GRC_BLOCKS_PATH = /usr/local/share/gnuradio/grc/blocks:/usr/share/gnuradio/grc/blocks:/usr/local/insa/share/gnuradio/grc/blocks
+# environment
+LC_ALL = C
+# environment
+DBUS_STARTER_BUS_TYPE = session
+# environment
+LUSTRE_INSTALL = /usr/local/insa/lustre-v4-XX-0-linux64
+# environment
+QT4_IM_MODULE = ibus
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+MATE_DESKTOP_SESSION_ID = this-is-deprecated
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+VSCODE_PID = 2529
+# environment
+DBUS_STARTER_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f062b62975ff2
+# variable set hash-table stats:
+# Load=127/1024=12%, Rehash=0, Collisions=16/157=10%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# . (device 62, inode 2760990933): 33 files, no impossibilities.
+
+# 33 files, no impossibilities in 1 directories.
+
+# Implicit Rules
+
+%.o: %.c
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+ts.o: ts.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'ts'
+#  Last modified 2022-06-01 14:24:27.799687
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+
+all: comp
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+assembleur.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-01 14:12:18.955848
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+main.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-27 11:23:24.526168
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+comp.l:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-31 18:48:06.933544
+#  File has been updated.
+#  Successfully updated.
+
+comp: y.tab.o lex.yy.o main.o ts.o assembleur.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-01 14:24:27.898684
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 22):
+	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@
+
+# Not a target:
+comp.y:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-01 14:24:22.449686
+#  File has been updated.
+#  Successfully updated.
+
+lex.yy.o: lex.yy.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'lex.yy'
+#  Last modified 2022-06-01 14:24:27.761685
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-01 10:47:57.087752
+#  File has been updated.
+#  Successfully updated.
+
+test: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 28):
+	echo "main(){int a=3;}" | ./$(BIN)
+
+# Not a target:
+ts.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-01 13:02:05.695082
+#  File has been updated.
+#  Successfully updated.
+
+y.tab.o: y.tab.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'y.tab'
+#  Last modified 2022-06-01 14:24:27.693685
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+
+lex.yy.c: comp.l
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-01 14:24:27.703689
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 19):
+	flex $<
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 25):
+	rm $(OBJ) y.tab.c y.tab.h lex.yy.c y.output
+ 
+
+assembleur.o: assembleur.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'assembleur'
+#  Last modified 2022-06-01 14:24:27.825683
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+
+y.tab.c: comp.y
+#  Implicit rule search has not been done.
+#  Last modified 2022-06-01 14:24:27.6457
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 16):
+	yacc -d -t -v $<
+
+main.o: main.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-06-01 14:24:27.7727
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 13):
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+
+# files hash-table stats:
+# Load=19/1024=2%, Rehash=0, Collisions=0/55=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 47 / storage = 426 B / avg = 9 B
+# current buf: size = 8162 B / used = 426 B / count = 47 / avg = 9 B
+
+# strcache performance: lookups = 80 / hit rate = 41%
+# hash-table stats:
+# Load=47/8192=1%, Rehash=0, Collisions=1/80=1%
+# Finished Make data base on Wed Jun  1 14:48:48 2022
+
+ 

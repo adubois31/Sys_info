@@ -25,5 +25,5 @@ clean:
 	rm $(OBJ) y.tab.c y.tab.h lex.yy.c y.output
 
 test: all
-	echo "main(){int a;}" | ./$(BIN)
+	echo "main(){int a=3;}" | ./$(BIN)
 

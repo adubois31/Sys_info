@@ -75,11 +75,11 @@ extern int yydebug;
     tPRINT = 281,
     tBLANK = 282,
     tERROR = 283,
-    tIF = 284,
-    tWHILE = 285,
-    tELSE = 286,
-    tVARNAME = 287,
-    tNB = 288
+    tELSE = 284,
+    tVARNAME = 285,
+    tNB = 286,
+    tWHILE = 287,
+    tIF = 288
   };
 #endif
 /* Tokens.  */
@@ -109,18 +109,18 @@ extern int yydebug;
 #define tPRINT 281
 #define tBLANK 282
 #define tERROR 283
-#define tIF 284
-#define tWHILE 285
-#define tELSE 286
-#define tVARNAME 287
-#define tNB 288
+#define tELSE 284
+#define tVARNAME 285
+#define tNB 286
+#define tWHILE 287
+#define tIF 288
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
 #line 11 "comp.y"
- int nb; char var[16]; 
+ int nb; char * var; 
 
 #line 126 "y.tab.h"
 

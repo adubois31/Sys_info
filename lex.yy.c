@@ -824,7 +824,7 @@ YY_RULE_SETUP
 #line 21 "comp.l"
 {
         // TODO: limite 16
-        strcpy(yylval.var,yytext);
+        yylval.var=strdup(yytext);
         return tVARNAME;}
 	YY_BREAK
 case 13:
@@ -927,7 +927,7 @@ case 32:
 YY_RULE_SETUP
 #line 44 "comp.l"
 { 
-        yylval.nb = atoi(yytext);
+        yylval.nb = atoi(strdup(yytext));
         return tNB; }
 	YY_BREAK
 case 33:

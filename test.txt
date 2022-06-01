@@ -1,6 +1,7 @@
 main (){
-	int a=3;
-	int b=7;
-	a=a+b;
-	b=a+b;
+	int a=0;
+	while(a<3){
+		printf(1);
+	}
+	printf(2);
 }
