@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun  1 18:42:00 2022
+# Make data base, printed on Thu Jun  2 09:31:20 2022
 
 # Variables
 
@@ -57,7 +57,7 @@ QT_AUTO_SCREEN_SCALE_FACTOR = 0
 # makefile (from 'Makefile', line 6)
 CFLAGS = -Wall -g
 # environment
-JOURNAL_STREAM = 8:43215
+JOURNAL_STREAM = 8:64236
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-mate:/etc/xdg
 # environment
@@ -73,13 +73,13 @@ GNUMAKEFLAGS :=
 # environment
 XDG_DATA_DIRS = /usr/share/mate:/usr/share/mate:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f062b62975ff2
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/24205/bus,guid=01dff5b8ea8945c86a48dcf462986727
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
 QT_SCALE_FACTOR = 1
 # environment
-MANAGERPID = 1311
+MANAGERPID = 3489
 # environment
 CLUTTER_IM_MODULE = ibus
 # environment
@@ -89,7 +89,7 @@ VSCODE_CWD = /home/delambre
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_24205_pz1xn7
+KRB5CCNAME = FILE:/tmp/krb5cc_24205_AwR9kr
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -99,7 +99,7 @@ GRM = comp.y
 # environment
 GPG_AGENT_INFO = /run/user/24205/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/insa-10223:@/tmp/.ICE-unix/1323,unix/insa-10223:/tmp/.ICE-unix/1323
+SESSION_MANAGER = local/insa-11273:@/tmp/.ICE-unix/3504,unix/insa-11273:/tmp/.ICE-unix/3504
 # environment
 XDG_RUNTIME_DIR = /run/user/24205
 # environment
@@ -109,7 +109,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 6e9f8bc03c90405ab55426abbe3c25b6
+INVOCATION_ID = 746354200ea444739f358e34fcd6aa68
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -121,7 +121,7 @@ XDG_SESSION_DESKTOP = mate
 # environment
 SSH_AUTH_SOCK = /run/user/24205/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2529
+GIO_LAUNCHED_DESKTOP_FILE_PID = 4070
 # automatic
 %F = $(notdir $%)
 # environment
@@ -139,7 +139,7 @@ QT_QPA_PLATFORMTHEME = gtk2
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 1403
+SSH_AGENT_PID = 3579
 # environment
 PKG_CONFIG_PATH = /usr/local/insa/shared/opam/default/lib/pkgconfig:/usr/local/insa/shared/opam/default/lib/pkgconfig:
 # environment
@@ -161,11 +161,12 @@ VSCODE_CODE_CACHE_PATH = /home/delambre/.config/Code/CachedData/c3511e6c69bb3901
 # environment
 LOGNAME = delambre
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 MAKE_VERSION := 4.2.1
+ 
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -185,11 +186,11 @@ CC = gcc
 # environment
 IM_CONFIG_PHASE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/24205/vscode-ipc-ac373706-72d0-4653-ada3-78c4a260ae8f.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/24205/vscode-ipc-c8b0686b-114b-44f7-a0a3-25f4c021b607.sock
 # environment
 COMPIZ_CONFIG_PROFILE = mate
 # environment
-XDG_SESSION_ID = c2
+XDG_SESSION_ID = c4
 # environment
 USER = delambre
 # environment
@@ -261,11 +262,11 @@ MATE_DESKTOP_SESSION_ID = this-is-deprecated
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2529
+VSCODE_PID = 4070
 # environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f062b62975ff2
+DBUS_STARTER_ADDRESS = unix:path=/run/user/24205/bus,guid=01dff5b8ea8945c86a48dcf462986727
 # variable set hash-table stats:
-# Load=127/1024=12%, Rehash=0, Collisions=16/163=10%
+# Load=127/1024=12%, Rehash=0, Collisions=16/157=10%
 
 # Pattern-specific Variable Values
 
@@ -273,16 +274,15 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f06
 
 # Directories
 
-# . (device 62, inode 2760990933): 32 files, no impossibilities.
+# . (device 54, inode 2760990933): 34 files, no impossibilities.
 
-# 32 files, no impossibilities in 1 directories.
+# 34 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
 %.o: %.c
 #  recipe to execute (from 'Makefile', line 13):
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
- 
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
@@ -291,7 +291,7 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/24205/bus,guid=19a74658b1c53a31128f06
 ts.o: ts.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'ts'
-#  Last modified 2022-06-01 18:41:53.588681
+#  Last modified 2022-06-01 21:11:32.775927
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
@@ -302,21 +302,19 @@ all: comp
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 
 # Not a target:
 assembleur.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 18:29:29.99274
+#  Last modified 2022-06-01 20:53:36.847974
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 interpreteur.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 18:37:04.950515
+#  Last modified 2022-06-01 20:57:05.566093
 #  File has been updated.
 #  Successfully updated.
 
@@ -336,25 +334,23 @@ comp.l:
 
 comp: y.tab.o lex.yy.o main.o ts.o assembleur.o interpreteur.o
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Last modified 2022-06-01 21:11:32.910924
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 22):
 	$(CC) $(CFLAGS) $(CPPFLAGS) $^ -o $@
 
 # Not a target:
 comp.y:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-01 18:28:37.187742
+#  Last modified 2022-06-01 21:11:27.24392
 #  File has been updated.
 #  Successfully updated.
 
 lex.yy.o: lex.yy.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'lex.yy'
-#  Last modified 2022-06-01 18:41:53.532676
+#  Last modified 2022-06-01 21:11:32.717925
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
@@ -384,7 +380,7 @@ ts.c:
 y.tab.o: y.tab.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'y.tab'
-#  Last modified 2022-06-01 18:41:53.442682
+#  Last modified 2022-06-01 21:11:32.564927
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
@@ -392,7 +388,7 @@ y.tab.o: y.tab.c
 
 lex.yy.c: comp.l
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-01 18:41:53.458677
+#  Last modified 2022-06-01 21:11:32.614945
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 19):
@@ -414,7 +410,7 @@ clean:
 assembleur.o: assembleur.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'assembleur'
-#  Last modified 2022-06-01 18:41:53.626684
+#  Last modified 2022-06-01 21:11:32.816927
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
@@ -423,33 +419,15 @@ assembleur.o: assembleur.c
 interpreteur.o: interpreteur.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'interpreteur'
-#  File does not exist.
+#  Last modified 2022-06-01 21:11:32.851935
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := interpreteur.o
-# automatic
-# % := 
-# automatic
-# * := interpreteur
-# automatic
-# + := interpreteur.c
-# automatic
-# | := 
-# automatic
-# < := interpreteur.c
-# automatic
-# ^ := interpreteur.c
-# automatic
-# ? := interpreteur.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 y.tab.c: comp.y
 #  Implicit rule search has not been done.
-#  Last modified 2022-06-01 18:41:53.377694
+#  Last modified 2022-06-01 21:11:32.452924
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 16):
@@ -458,7 +436,7 @@ y.tab.c: comp.y
 main.o: main.c
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-01 18:41:53.551679
+#  Last modified 2022-06-01 21:11:32.734932
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 13):
@@ -470,14 +448,15 @@ main.o: main.c
 
 # No 'vpath' search paths.
 
+ 
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 49 / storage = 454 B / avg = 9 B
 # current buf: size = 8162 B / used = 454 B / count = 49 / avg = 9 B
 
-# strcache performance: lookups = 83 / hit rate = 40%
+# strcache performance: lookups = 85 / hit rate = 42%
 # hash-table stats:
-# Load=49/8192=1%, Rehash=0, Collisions=1/83=1%
-# Finished Make data base on Wed Jun  1 18:42:00 2022
+# Load=49/8192=1%, Rehash=0, Collisions=1/85=1%
+# Finished Make data base on Thu Jun  2 09:31:20 2022
 
  

@@ -7,3 +7,4 @@ int getSommet();
 int popTemp();
 int pushTemp();
 int findAddr(char name[16]);
+int isSymbConst(int adr);

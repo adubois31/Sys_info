@@ -1,6 +1,7 @@
 %{
 #include <stdlib.h>
 #include <stdio.h>
+#include <errno.h>
 #include "ts.h"
 #include "assembleur.h"
 #include "interpreteur.h"
@@ -16,11 +17,11 @@ int is_const = 0;
 %token tMAIN tPO tPF tAO tAF tCONST tINT tEGAL tSOU tADD tMUL tDIV tNOT tSUP tINF tEQUAL tDIFF tSUPEQ tINFEQ tOR tAND tCOMA tSC tPRINT tBLANK tERROR tELSE
 %token <var> tVARNAME 
 %token <nb> tNB tWHILE tIF
-%left tADD tSOU
-%left tMUL tDIV
-%type  Body Var Const Declaration  Lines If While 
+%left tADD tSOU tOR
+%left tMUL tDIV tAND tNOT
+%type  Body Var Declaration  Lines If While 
 %type <nb> Terme Operation Expr Condition 
-%type <var> VarInt
+%type <var> VarInt Const
 %start Programme
 %%
 Programme :	  tMAIN  tPO  tPF   Body
@@ -36,7 +37,10 @@ Lines :  Declaration Lines
       |;
 Declaration :  Const  tSC 
       |VarInt  tSC 
-      |Const tEGAL Expr tSC 
+      |Const tEGAL Expr tSC  {
+                              int temp=popTemp(); 
+                              addInst2(COP,findAddr($1),temp);
+                              };
       |VarInt tEGAL Expr tSC {
                               int temp=popTemp(); 
                               //printf("ADDR DE TEMP ***************************: %d \n",temp );
@@ -46,15 +50,18 @@ Declaration :  Const  tSC
                               //printTabIns();
                               };
                             
-Const :   tCONST { is_const = 1; }  VarInt { is_const = 0; } ;
+Const :   tCONST { is_const = 1; }  VarInt { is_const = 0; $$=$3 ;} ;
 
 VarInt :    tINT tVARNAME { pushTS($2,is_const); $$=$2; };
-            //|tINT tVARNAME tCOMA  Var { pushTS($2,is_const); $$=$2;};
-
 
 Var :     tVARNAME { pushTS($1,is_const); }
             | tVARNAME tCOMA  Var { pushTS($1,is_const); }; 
-Operation :  tVARNAME  tEGAL Expr tSC {addInst2(COP,findAddr($1),popTemp());};
+Operation :  tVARNAME  tEGAL Expr tSC {if(isSymbConst(findAddr($1))){
+                                          perror("Cannot modify a constant \n");exit(-1);
+                                    }
+                                    else{
+                                          addInst2(COP,findAddr($1),popTemp());}
+                                    };
 
 Expr :  Expr  tADD  Expr {int addrTemp1=popTemp() ;
                         int addrTemp2=popTemp();
@@ -72,7 +79,7 @@ Expr :  Expr  tADD  Expr {int addrTemp1=popTemp() ;
                         int addrTemp2=popTemp();
                         int addrTempRes = pushTemp();
                         addInst3(DIV,addrTempRes,addrTemp2,addrTemp1);$$=addrTempRes;}
-
+      |tPO Expr tPF {$$=$2;}
       |Condition
       |Terme {$$=$1;};
 

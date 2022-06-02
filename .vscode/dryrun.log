@@ -1,7 +1,13 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/delambre/Bureau/4A/Syst_Info_le_bon/Sys_info'
+yacc -d -t -v comp.y
+gcc -c -Wall -g  y.tab.c -o y.tab.o
+flex comp.l
+gcc -c -Wall -g  lex.yy.c -o lex.yy.o
+gcc -c -Wall -g  main.c -o main.o
+gcc -c -Wall -g  ts.c -o ts.o
+gcc -c -Wall -g  assembleur.c -o assembleur.o
 gcc -c -Wall -g  interpreteur.c -o interpreteur.o
- 
 gcc -Wall -g  y.tab.o lex.yy.o main.o ts.o assembleur.o interpreteur.o -o comp
 make: Leaving directory '/home/delambre/Bureau/4A/Syst_Info_le_bon/Sys_info'
  

@@ -32,6 +32,12 @@ void TSinit(){
     profondeur=-1;
 }
 
+int isSymbConst(int adr){
+    if (strcmp(TabSymb.table[adr].type,"cint")==0){
+        return 1;
+    }
+    return 0;
+}
 
 void printTS(){
     printf("-----------Ecriture de la Table des symboles -----------\n");
