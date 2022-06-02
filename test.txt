@@ -1,4 +1,5 @@
-main(){ 
+main()
+{ 	
 	int i;
 	int j;
 	int k;
@@ -9,4 +10,18 @@ main(){
 	printf (i) ;
 	r=(i+j)*(i+k/j) ;
 	printf ( r ) ;
+	if(j<=k){
+		printf(1);
+	}else{
+		printf(0);
+	}
+
+	if (!(0)){
+		printf(1);
+	}
+
+	while (i<=k){
+		printf(99);
+		i=i+1;
+	}
 }

@@ -880,12 +880,12 @@ YY_RULE_SETUP
 case 23:
 YY_RULE_SETUP
 #line 35 "comp.l"
-{ return tSUPEQ; }
+{ return tINFEQ; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 36 "comp.l"
-{ return tINFEQ; }
+{ return tSUPEQ; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP

@@ -75,11 +75,11 @@ extern int yydebug;
     tPRINT = 281,
     tBLANK = 282,
     tERROR = 283,
-    tELSE = 284,
-    tVARNAME = 285,
-    tNB = 286,
-    tWHILE = 287,
-    tIF = 288
+    tVARNAME = 284,
+    tNB = 285,
+    tWHILE = 286,
+    tIF = 287,
+    tELSE = 288
   };
 #endif
 /* Tokens.  */
@@ -109,11 +109,11 @@ extern int yydebug;
 #define tPRINT 281
 #define tBLANK 282
 #define tERROR 283
-#define tELSE 284
-#define tVARNAME 285
-#define tNB 286
-#define tWHILE 287
-#define tIF 288
+#define tVARNAME 284
+#define tNB 285
+#define tWHILE 286
+#define tIF 287
+#define tELSE 288
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

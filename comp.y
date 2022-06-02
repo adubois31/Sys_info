@@ -14,13 +14,13 @@ int is_const = 0;
 
 %}
 %union { int nb; char * var; }
-%token tMAIN tPO tPF tAO tAF tCONST tINT tEGAL tSOU tADD tMUL tDIV tNOT tSUP tINF tEQUAL tDIFF tSUPEQ tINFEQ tOR tAND tCOMA tSC tPRINT tBLANK tERROR tELSE
+%token tMAIN tPO tPF tAO tAF tCONST tINT tEGAL tSOU tADD tMUL tDIV tNOT tSUP tINF tEQUAL tDIFF tSUPEQ tINFEQ tOR tAND tCOMA tSC tPRINT tBLANK tERROR 
 %token <var> tVARNAME 
-%token <nb> tNB tWHILE tIF
+%token <nb> tNB tWHILE tIF tELSE
 %left tADD tSOU tOR
 %left tMUL tDIV tAND tNOT
-%type  Body Var Declaration  Lines If While 
-%type <nb> Terme Operation Expr Condition 
+%type  Body Var Declaration  Lines  While IfElse
+%type <nb> Terme Operation Expr Condition If
 %type <var> VarInt Const
 %start Programme
 %%
@@ -33,6 +33,7 @@ Lines :  Declaration Lines
       | Operation Lines
       | Print Lines
       |If Lines
+      |IfElse Lines
       |While Lines
       |;
 Declaration :  Const  tSC 
@@ -80,7 +81,7 @@ Expr :  Expr  tADD  Expr {int addrTemp1=popTemp() ;
                         int addrTempRes = pushTemp();
                         addInst3(DIV,addrTempRes,addrTemp2,addrTemp1);$$=addrTempRes;}
       |tPO Expr tPF {$$=$2;}
-      |Condition
+      |Condition{$$=$1;}
       |Terme {$$=$1;};
 
 Terme : tNB {int adrTemp=pushTemp();
@@ -90,13 +91,14 @@ Terme : tNB {int adrTemp=pushTemp();
                   if (adr!=-1){
                         addInst2(COP,adrTemp, adr);     
                   }
-                  $$=$1;
+                  $$=adrTemp;
                   } ;
 
 Print : tPRINT  tPO  Terme  tPF  tSC {int temp=popTemp();addInst1(PRI,temp);}
 While : tWHILE {$1=getLastInst()+1;} tPO Condition {addInst2(JMF,$4,-1);}  tPF Body {addInst1(JMP,$1) ;modifyJump($1,getLastInst()+1);};  
-If :        tIF tPO Condition {addInst2(JMF,$3,-1);$1=getLastInst();} tPF  Body {modifyInstr($1,getLastInst()+1);};
-            //|tIF tPO Condition tPF   Body  tELSE   Body;
+If : tIF tPO Condition {addInst2(JMF,$3,-1);$1=getLastInst();} tPF  Body {addInst1(JMP,getLastInst()+2);modifyInstr($1,getLastInst()+1);$$=getLastInst();};
+
+IfElse : If tELSE Body{modifyInstr($1,getLastInst()+1);};
 
 Condition :  Condition tSUPEQ Condition{int addrTemp1=popTemp() ;
                                     int addrTemp2=popTemp();
@@ -145,7 +147,7 @@ Condition :  Condition tSUPEQ Condition{int addrTemp1=popTemp() ;
                                     int addrTempRes = pushTemp();
                                     addInst2(NOT,addrTempRes,addrTemp);
                                     $$=addrTempRes;}
-            |Terme;
+            |Terme{$$=$1;};
             
 
 
