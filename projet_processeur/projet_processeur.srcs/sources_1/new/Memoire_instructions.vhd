@@ -34,7 +34,6 @@ use IEEE.numeric_std.all;
 
 entity Memoire_instructions is
     Port ( adr_inst : in STD_LOGIC_VECTOR (7 downto 0);
-           CLK : in STD_LOGIC;
            Output : out STD_LOGIC_VECTOR (31 downto 0));
 end Memoire_instructions;
 

@@ -1,0 +1,182 @@
+/*
+
+Xilinx Vivado v2018.2 (64-bit) [Major: 2018, Minor: 2]
+SW Build: 2258646 on Thu Jun 14 20:02:38 MDT 2018
+IP Build: 2256618 on Thu Jun 14 22:10:49 MDT 2018
+
+Process ID: 8537
+License: Customer
+
+Current time: 	Thu Jun 02 16:57:26 CEST 2022
+Time zone: 	Central European Time (Europe/Paris)
+
+OS: Ubuntu
+OS Version: 5.15.0-33-generic
+OS Architecture: amd64
+Available processors (cores): 4
+
+Display: :0
+Screen size: 1920x1080
+Screen resolution (DPI): 96
+Available screens: 1
+Available disk space: 85 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	1.8.0_112 64-bit
+Java home: 	/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/tps/lnx64/jre
+Java executable location: 	/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/tps/lnx64/jre/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 2 GB
+
+
+User name: 	a_dubois
+User home directory: /home/a_dubois
+User working directory: /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur
+User country: 	FR
+User language: 	fr
+User locale: 	fr_FR
+
+RDI_BASEROOT: /usr/local/insa/Xilinx.VIVADO/Vivado
+HDI_APPROOT: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2
+RDI_DATADIR: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/data
+RDI_BINDIR: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/bin
+
+Vivado preferences file location: /home/a_dubois/.Xilinx/Vivado/2018.2/vivado.xml
+Vivado preferences directory: /home/a_dubois/.Xilinx/Vivado/2018.2/
+Vivado layouts directory: /home/a_dubois/.Xilinx/Vivado/2018.2/layouts
+PlanAhead jar file location: 	/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/lib/classes/planAhead.jar
+Vivado log file location: 	/home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/vivado.log
+Vivado journal file location: 	/home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/vivado.jou
+Engine tmp dir: 	./.Xil/Vivado-8537-insa-10228
+
+Xilinx Environment Variables
+----------------------------
+XILINX: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/ids_lite/ISE
+XILINXD_LICENSE_FILE: /usr/local/insa/Xilinx.VIVADO/Xilinx.lic
+XILINX_DSP: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/ids_lite/ISE
+XILINX_PLANAHEAD: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2
+XILINX_SDK: /usr/local/insa/Xilinx.VIVADO/SDK/2018.2
+XILINX_VIVADO: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2
+XILINX_VIVADO_HLS: /usr/local/insa/Xilinx.VIVADO/Vivado/2018.2
+
+
+GUI allocated memory:	175 MB
+GUI max memory:		3,052 MB
+Engine allocated memory: 897 MB
+
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// [GUI Memory]: 61 MB (+61168kb) [00:00:07]
+// [Engine Memory]: 878 MB (+769288kb) [00:00:07]
+selectButton(PAResourceEtoH.GettingStartedView_OPEN_PROJECT, "Open Project"); // x (w, ck)
+// Run Command: PAResourceCommand.PACommandNames_OPEN_PROJECT
+setFileChooser("/home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.xpr");
+// Opening Vivado Project: /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.xpr. Version: Vivado v2018.2 
+// bx (ck):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// [GUI Memory]: 82 MB (+19012kb) [00:00:11]
+// Tcl Message: open_project /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 925 MB. GUI used memory: 43 MB. Current time: 6/2/22 4:57:29 PM CEST
+// Tcl Message: open_project /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/data/ip'. 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 994 MB (+75746kb) [00:00:15]
+// Project name: projet_processeur; location: /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur; part: xc7a35tcpg236-1
+// 'i' command handler elapsed time: 7 seconds
+// Tcl Message: open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 6146.516 ; gain = 99.367 ; free physical = 3373 ; free virtual = 14666 
+dismissDialog("Open Project"); // bx (ck)
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// Tcl Message: update_compile_order -fileset sources_1 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,034 MB. GUI used memory: 46 MB. Current time: 6/2/22 5:01:49 PM CEST
+// Elapsed time: 1331 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd)]", 1); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_ALU : ALU(Behavioral) (ALU.vhd)]", 5, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_ALU : ALU(Behavioral) (ALU.vhd)]", 5, false, false, false, false, false, true); // B (D, ck) - Double Click
+// [Engine Memory]: 1,045 MB (+1211kb) [00:22:34]
+// [GUI Memory]: 87 MB (+1092kb) [00:26:06]
+// Elapsed time: 236 seconds
+selectCodeEditor("ALU.vhd", 157, 68); // ce (w, ck)
+selectCodeEditor("ALU.vhd", 148, 44); // ce (w, ck)
+// Elapsed time: 17 seconds
+selectCodeEditor("ALU.vhd", 308, 1); // ce (w, ck)
+selectCodeEditor("ALU.vhd", 52, 22); // ce (w, ck)
+// [GUI Memory]: 92 MB (+494kb) [00:28:02]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,050 MB. GUI used memory: 48 MB. Current time: 6/2/22 5:31:49 PM CEST
+// Elapsed time: 576 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_Banc_registres : Banc_Registres(Behavioral) (Banc_registres.vhd)]", 2, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_Banc_registres : Banc_Registres(Behavioral) (Banc_registres.vhd)]", 2, false, false, false, false, false, true); // B (D, ck) - Double Click
+// HMemoryUtils.trashcanNow. Engine heap size: 1,060 MB. GUI used memory: 48 MB. Current time: 6/2/22 5:33:44 PM CEST
+// Elapsed time: 500 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Banc_registres.vhd", 2); // k (j, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "ALU.vhd", 1); // k (j, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_Memoire_donnees : Memoire_donnees(Behavioral) (Memoire_donnees.vhd)]", 3, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_Memoire_donnees : Memoire_donnees(Behavioral) (Memoire_donnees.vhd)]", 3, false, false, false, false, false, true); // B (D, ck) - Double Click
+// [GUI Memory]: 97 MB (+558kb) [00:48:20]
+// Elapsed time: 490 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_ALU : ALU(Behavioral) (ALU.vhd)]", 5, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_ALU : ALU(Behavioral) (ALU.vhd)]", 5, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 232 seconds
+selectCodeEditor("ALU.vhd", 118, 202); // ce (w, ck)
+// Elapsed time: 121 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_Banc_registres : Banc_Registres(Behavioral) (Banc_registres.vhd)]", 2, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_Banc_registres : Banc_Registres(Behavioral) (Banc_registres.vhd)]", 2, false, false, false, false, false, true); // B (D, ck) - Double Click
+// Elapsed time: 289 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Banc_registres.vhd", 2); // k (j, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Banc_registres.vhd", 2); // k (j, ck)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_Memoire_inst : Memoire_instructions(Behavioral) (Memoire_instructions.vhd)]", 4, false); // B (D, ck)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd), Label_Memoire_inst : Memoire_instructions(Behavioral) (Memoire_instructions.vhd)]", 4, false, false, false, false, false, true); // B (D, ck) - Double Click
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_donnees.vhd", 1); // k (j, ck)
+// Elapsed time: 120 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Memoire_instructions.vhd", 2); // k (j, ck)
+selectCodeEditor("Memoire_instructions.vhd", 287, 301); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// TclEventType: DG_GRAPH_GENERATED
+// HMemoryUtils.trashcanNow. Engine heap size: 1,085 MB. GUI used memory: 49 MB. Current time: 6/2/22 6:03:19 PM CEST
+// Elapsed time: 16 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd)]", 1, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd)]", 1, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// Elapsed time: 18 seconds
+selectCodeEditor("processeur.vhd", 245, 365); // ce (w, ck)
+selectCodeEditor("processeur.vhd", 318, 374); // ce (w, ck)
+selectCodeEditor("processeur.vhd", 342, 374); // ce (w, ck)
+selectCodeEditor("processeur.vhd", 324, 379); // ce (w, ck)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_ANALYSIS_MSG_RESET
+// [Engine Memory]: 1,103 MB (+5465kb) [01:06:46]
+// TclEventType: DG_GRAPH_GENERATED
+// Elapsed time: 17 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // k (j, ck)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,107 MB. GUI used memory: 49 MB. Current time: 6/2/22 6:04:09 PM CEST
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // J
+// Elapsed time: 285 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd)]", 1, true); // B (D, ck) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, processeur(Behavioral) (processeur.vhd)]", 1, true, false, false, false, false, true); // B (D, ck) - Double Click - Node
+// [GUI Memory]: 102 MB (+145kb) [01:24:41]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,109 MB. GUI used memory: 50 MB. Current time: 6/2/22 6:34:09 PM CEST
+// [GUI Memory]: 107 MB (+102kb) [02:06:16]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,109 MB. GUI used memory: 49 MB. Current time: 6/2/22 7:04:09 PM CEST
+// Elapsed time: 3351 seconds
+selectCodeEditor("processeur.vhd", 323, 175); // ce (w, ck)
+// Elapsed time: 56 seconds
+selectCodeEditor("processeur.vhd", 450, 129); // ce (w, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 7); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Constraints]", 6); // B (D, ck)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 9); // B (D, ck)

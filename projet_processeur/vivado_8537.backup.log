@@ -2,8 +2,8 @@
 # Vivado v2018.2 (64-bit)
 # SW Build 2258646 on Thu Jun 14 20:02:38 MDT 2018
 # IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
-# Start of session at: Thu Jun  2 19:50:43 2022
-# Process ID: 2827
+# Start of session at: Thu Jun  2 16:56:55 2022
+# Process ID: 8537
 # Current directory: /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur
 # Command line: vivado
 # Log file: /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/vivado.log
@@ -11,10 +11,10 @@
 #-----------------------------------------------------------
 start_gui
 open_project /home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/usr/local/insa/Xilinx.VIVADO/Vivado/2018.2/data/ip'.
+open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 6146.516 ; gain = 99.367 ; free physical = 3373 ; free virtual = 14666
 update_compile_order -fileset sources_1
-launch_simulation
-source Test_Processeur.tcl
-relaunch_sim
-relaunch_sim
-relaunch_sim
-close_sim

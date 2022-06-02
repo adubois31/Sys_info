@@ -61,7 +61,6 @@ signal Data_out : STD_LOGIC_VECTOR (7 downto 0);
 --section memoire instruction
 COMPONENT Memoire_instructions is
     Port ( adr_inst : in STD_LOGIC_VECTOR (7 downto 0);
-           CLK : in STD_LOGIC;
            Output : out STD_LOGIC_VECTOR (31 downto 0));
 end COMPONENT;
 
@@ -165,7 +164,6 @@ Label_Memoire_donnees : Memoire_donnees port map(
 
 Label_Memoire_inst : Memoire_instructions port map(
     adr_inst=>Adr_inst_in,
-    CLK=>CLK_in,
     Output=>Inst_out
 );
 

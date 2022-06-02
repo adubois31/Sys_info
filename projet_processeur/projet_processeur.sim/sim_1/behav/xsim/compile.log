@@ -196,3 +196,7 @@ INFO: [VRFC 10-163] Analyzing VHDL file "/home/a_dubois/Bureau/4_I/Sys_info/proj
 INFO: [VRFC 10-307] analyzing entity Memoire_instructions
 INFO: [VRFC 10-163] Analyzing VHDL file "/home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/processeur.vhd" into library xil_defaultlib
 INFO: [VRFC 10-307] analyzing entity processeur
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/Memoire_instructions.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Memoire_instructions
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/a_dubois/Bureau/4_I/Sys_info/projet_processeur/projet_processeur.srcs/sources_1/new/processeur.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity processeur
