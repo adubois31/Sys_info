@@ -1,22 +1,27 @@
 %{
 #include <stdlib.h>
 #include <stdio.h>
+#include <errno.h>
 #include "ts.h"
 #include "assembleur.h"
+#include "interpreteur.h"
 void yyerror(char *s);
+
+extern FILE *yyin;
+
 
 int is_const = 0;
 
 %}
 %union { int nb; char * var; }
-%token tMAIN tPO tPF tAO tAF tCONST tINT tEGAL tSOU tADD tMUL tDIV tNOT tSUP tINF tEQUAL tDIFF tSUPEQ tINFEQ tOR tAND tCOMA tSC tPRINT tBLANK tERROR tELSE
+%token tMAIN tPO tPF tAO tAF tCONST tINT tEGAL tSOU tADD tMUL tDIV tNOT tSUP tINF tEQUAL tDIFF tSUPEQ tINFEQ tOR tAND tCOMA tSC tPRINT tBLANK tERROR 
 %token <var> tVARNAME 
-%token <nb> tNB tWHILE tIF
-%left tADD tSOU
-%left tMUL tDIV
-%type  Body Var Const Declaration  Lines If While 
-%type <nb> Terme Operation Expr Condition 
-%type <var> VarInt
+%token <nb> tNB tWHILE tIF tELSE
+%left tADD tSOU tOR
+%left tMUL tDIV tAND tNOT
+%type  Body Var Declaration  Lines  While IfElse
+%type <nb> Terme Operation Expr Condition If
+%type <var> VarInt Const
 %start Programme
 %%
 Programme :	  tMAIN  tPO  tPF   Body
@@ -28,11 +33,15 @@ Lines :  Declaration Lines
       | Operation Lines
       | Print Lines
       |If Lines
+      |IfElse Lines
       |While Lines
       |;
 Declaration :  Const  tSC 
       |VarInt  tSC 
-      |Const tEGAL Expr tSC 
+      |Const tEGAL Expr tSC  {
+                              int temp=popTemp(); 
+                              addInst2(COP,findAddr($1),temp);
+                              };
       |VarInt tEGAL Expr tSC {
                               int temp=popTemp(); 
                               //printf("ADDR DE TEMP ***************************: %d \n",temp );
@@ -42,23 +51,37 @@ Declaration :  Const  tSC
                               //printTabIns();
                               };
                             
-Const :   tCONST { is_const = 1; }  VarInt { is_const = 0; } ;
+Const :   tCONST { is_const = 1; }  VarInt { is_const = 0; $$=$3 ;} ;
 
 VarInt :    tINT tVARNAME { pushTS($2,is_const); $$=$2; };
-            //|tINT tVARNAME tCOMA  Var { pushTS($2,is_const); $$=$2;};
-
 
 Var :     tVARNAME { pushTS($1,is_const); }
             | tVARNAME tCOMA  Var { pushTS($1,is_const); }; 
-Operation :  tVARNAME  tEGAL Expr tSC {addInst2(COP,findAddr($1),popTemp());};
+Operation :  tVARNAME  tEGAL Expr tSC {if(isSymbConst(findAddr($1))){
+                                          perror("Cannot modify a constant \n");exit(-1);
+                                    }
+                                    else{
+                                          addInst2(COP,findAddr($1),popTemp());}
+                                    };
 
 Expr :  Expr  tADD  Expr {int addrTemp1=popTemp() ;
                         int addrTemp2=popTemp();
                         int addrTempRes = pushTemp();
-                        addInst3(ADD,addrTempRes,addrTemp1,addrTemp2);$$=$1;}
-      |Expr  tSOU  Expr {addInst3(SOU,$1,$1,$3);$$=$1;}
-      |Expr  tMUL  Expr {addInst3(MUL,$1,$1,$3);$$=$1;}  
-      |Expr  tDIV  Expr {addInst3(DIV,$1,$1,$3);$$=$1;}
+                        addInst3(ADD,addrTempRes,addrTemp1,addrTemp2);$$=addrTempRes;}
+      |Expr  tSOU  Expr {int addrTemp1=popTemp() ;
+                        int addrTemp2=popTemp();
+                        int addrTempRes = pushTemp();
+                        addInst3(SOU,addrTempRes,addrTemp2,addrTemp1);$$=addrTempRes;}
+      |Expr  tMUL  Expr {int addrTemp1=popTemp() ;
+                        int addrTemp2=popTemp();
+                        int addrTempRes = pushTemp();
+                        addInst3(MUL,addrTempRes,addrTemp2,addrTemp1);$$=addrTempRes;}  
+      |Expr  tDIV  Expr {int addrTemp1=popTemp() ;
+                        int addrTemp2=popTemp();
+                        int addrTempRes = pushTemp();
+                        addInst3(DIV,addrTempRes,addrTemp2,addrTemp1);$$=addrTempRes;}
+      |tPO Expr tPF {$$=$2;}
+      |Condition{$$=$1;}
       |Terme {$$=$1;};
 
 Terme : tNB {int adrTemp=pushTemp();
@@ -68,28 +91,63 @@ Terme : tNB {int adrTemp=pushTemp();
                   if (adr!=-1){
                         addInst2(COP,adrTemp, adr);     
                   }
-                  $$=$1;
+                  $$=adrTemp;
                   } ;
 
 Print : tPRINT  tPO  Terme  tPF  tSC {int temp=popTemp();addInst1(PRI,temp);}
 While : tWHILE {$1=getLastInst()+1;} tPO Condition {addInst2(JMF,$4,-1);}  tPF Body {addInst1(JMP,$1) ;modifyJump($1,getLastInst()+1);};  
-If :        tIF tPO Condition {addInst2(JMF,$3,-1);$1=getLastInst();} tPF  Body {modifyInstr($1,getLastInst()+1);};
-            //|tIF tPO Condition tPF   Body  tELSE   Body;
+If : tIF tPO Condition {addInst2(JMF,$3,-1);$1=getLastInst();} tPF  Body {addInst1(JMP,getLastInst()+2);modifyInstr($1,getLastInst()+1);$$=getLastInst();};
 
-Condition :  Condition tSUPEQ Condition
-            |Condition tSUP Condition {addInst3(SUP,$1,$1,$3);$$=$1;}
-            |Condition tINFEQ Condition
+IfElse : If tELSE Body{modifyInstr($1,getLastInst()+1);};
+
+Condition :  Condition tSUPEQ Condition{int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(INF,addrTempRes,addrTemp2,addrTemp1);
+                                    addInst2(NOT,addrTempRes,addrTempRes);
+                                    $$=addrTempRes;}
+            |Condition tSUP Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(SUP,addrTempRes,addrTemp2,addrTemp1);
+                                    $$=addrTempRes;}
+            |Condition tINFEQ Condition{int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(SUP,addrTempRes,addrTemp2,addrTemp1);
+                                    addInst2(NOT,addrTempRes,addrTempRes);
+                                    $$=addrTempRes;}
             |Condition tINF Condition {int addrTemp1=popTemp() ;
                                     int addrTemp2=popTemp();
                                     int addrTempRes = pushTemp();
                                     addInst3(INF,addrTempRes,addrTemp2,addrTemp1);
                                     $$=addrTempRes;}
-            |Condition tEQUAL Condition {addInst3(EQU,$1,$1,$3);$$=$1;}
-            |Condition tDIFF Condition
-            |Condition tOR Condition
-            |Condition tAND Condition
-            |tNOT tPO Condition tPF 
-            |Terme;
+            |Condition tEQUAL Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(EQU,addrTempRes,addrTemp2,addrTemp1);
+                                    $$=addrTempRes;}
+            |Condition tDIFF Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(EQU,addrTempRes,addrTemp2,addrTemp1);
+                                    addInst2(NOT,addrTempRes,addrTempRes);
+                                    $$=addrTempRes;}
+            |Condition tOR Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(OR,addrTempRes,addrTemp2,addrTemp1);
+                                    $$=addrTempRes;}
+            |Condition tAND Condition {int addrTemp1=popTemp() ;
+                                    int addrTemp2=popTemp();
+                                    int addrTempRes = pushTemp();
+                                    addInst3(AND,addrTempRes,addrTemp2,addrTemp1);
+                                    $$=addrTempRes;}
+            |tNOT tPO Condition tPF {int addrTemp=popTemp() ;
+                                    int addrTempRes = pushTemp();
+                                    addInst2(NOT,addrTempRes,addrTemp);
+                                    $$=addrTempRes;}
+            |Terme{$$=$1;};
             
 
 
@@ -102,13 +160,25 @@ void yyerror(char *s) {
  }
 
 
-int main(void) {
+int main(int argc, char** argv) {
 
       yydebug = 1;
       initTabIns();
+      
+      if(argc != 2) { 
+            fprintf(stderr, "Usage: %s <input file>\n", argv[0]); 
+            exit(1); 
+      } 
+      FILE *f = fopen(argv[1], "r"); 
+      if(f == NULL) { 
+            fprintf(stderr, "Failed to open file \"%s\".\n", argv[1]); 
+            exit(1); 
+      } 
+      yyin = f;
       printf("Lancement parsing\n"); // yydebug=1;
       TSinit();
       yyparse();
       printTabIns();
+      interpret();
       return 0;
 }

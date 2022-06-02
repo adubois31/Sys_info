@@ -6,12 +6,7 @@
 
 
 
-typedef struct{
-    char op;
-    int res;
-    int op1;
-    int op2;
-}instruction;
+
 
 int lastIns = -1;
 instruction tabIns [NUMINS];
@@ -27,6 +22,10 @@ void initTabIns(){
     for (int i=0;i<NUMINS;i++){
         tabIns[i]=insNull;
     }
+}
+
+instruction getInst(int adr){
+    return tabIns[adr];
 }
 
 int getLastInst(){
@@ -59,10 +58,31 @@ void modifyInstr(int adr, int val){
     }
 }
 
+char * decodeOP(char code){
+    switch(code){
+        case '1':return "ADD";
+        case '2':return "MUL";
+        case '3':return "SOU";
+        case '4':return "DIV";
+        case '5':return "COP";
+        case '6':return "AFC";
+        case '7':return "JMP";
+        case '8':return "JMF";
+        case '9':return "INF";
+        case 'A':return "SUP";
+        case 'B':return "EQU";
+        case 'C':return "PRI";
+        case 'D':return "OR";
+        case 'E': return "AND";
+        case 'F': return "NOT";
+        default : return "NONE";
+    }
+}
+
 void printTabIns(){
     printf("********************Ecriture de la table d'instruction********************\n");
     for (int i=0;i<NUMINS;i++){
-        printf("operation : %c, res : %d, op1 : %d, op2 : %d \n",tabIns[i].op,tabIns[i].res,tabIns[i].op1,tabIns[i].op2);
+        printf("operation : %s, res : %d, op1 : %d, op2 : %d \n",decodeOP(tabIns[i].op),tabIns[i].res,tabIns[i].op1,tabIns[i].op2);
     }
 }
 
@@ -80,8 +100,13 @@ char codeOP(enum operation op){
         case SUP:return 'A';
         case EQU:return 'B';
         case PRI:return 'C';
+        case OR:return 'D';
+        case AND: return 'E';
+        case NOT: return 'F';
     }
 }
+
+
 
 
 void addInst3(enum operation op, int res, int op1, int op2){
@@ -96,6 +121,8 @@ void addInst3(enum operation op, int res, int op1, int op2){
         case INF:
         case SUP:
         case EQU:
+        case OR:
+        case AND:
         //printf("ON essaye d'ajouter une instruction\n");
             newIns.op=codeOP(op);
             newIns.res=res;
@@ -116,6 +143,7 @@ void addInst2(enum operation op, int res, int operande){
         case COP:
         case AFC:
         case JMF:
+        case NOT:
             newIns.op=codeOP(op);
             newIns.res=res;
             newIns.op1=operande;

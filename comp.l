@@ -32,8 +32,8 @@ int {return tINT;}
 "<"     { return tINF; }
 "=="    { return tEQUAL; }
 "/="    { return tDIFF; }
-"<="    { return tSUPEQ; }
-">="    { return tINFEQ; }
+"<="    { return tINFEQ; }
+">="    { return tSUPEQ; }
 "||"    { return tOR; }
 "&&"    { return tAND; }
 " " {}

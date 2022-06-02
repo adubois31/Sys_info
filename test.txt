@@ -1,7 +1,27 @@
-main (){
-	int a=0;
-	while(a<3){
+main()
+{ 	
+	int i;
+	int j;
+	int k;
+	int r;
+	i =3 ;
+	j=4 ;
+	k=8 ;
+	printf (i) ;
+	r=(i+j)*(i+k/j) ;
+	printf ( r ) ;
+	if(j<=k){
+		printf(1);
+	}else{
+		printf(0);
+	}
+
+	if (!(0)){
 		printf(1);
 	}
-	printf(2);
+
+	while (i<=k){
+		printf(99);
+		i=i+1;
+	}
 }
